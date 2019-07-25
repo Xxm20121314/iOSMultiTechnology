@@ -1,36 +1,63 @@
 //
-//  NetWorkTableController.m
+//  NSURLConnectionController.m
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/7/25.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "NetWorkTableController.h"
-
 #import "NSURLConnectionController.h"
-@interface NetWorkTableController ()
+#import "NSURLConnectionManager.h"
+
+@interface NSURLConnectionController ()
 @property (nonatomic,strong) NSMutableArray *lists;
 @end
 
-@implementation NetWorkTableController
+@implementation NSURLConnectionController
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUp];
 }
 - (void)setUp
 {
+    NSString *address = @"http://apis.juhe.cn/cook/category";
+    NSDictionary *params = @{@"parentid":@(0), //分类ID,默认全部
+                             @"dtype":@"json",  //返回数据的格式,xml或json，默认json
+                             @"key":@"bc2ee87d058a09f523e817ad1eb300e5"};
     XXMBridgeModel *item1= [[XXMBridgeModel alloc] init];
-    item1.title = @"HTTP知识点";
+    item1.title = @"GET同步";
     item1.block = ^{
-        BaseWebViewController *web = [[BaseWebViewController alloc] init];
-        web.urlString = @"https://www.jianshu.com/p/4f2a08a7aa9e";
-        [self.navigationController pushViewController:web animated:YES];
+        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
+        [manage GET:NSURLConnectionTypeGetSync url:address params:params complete:^(id jsonObject, NSError *error) {
+            if (error) {
+                NSLog(@"error:%@",error);
+            }
+            NSLog(@"请求");
+        }];
     };
     XXMBridgeModel *item2= [[XXMBridgeModel alloc] init];
-    item2.title = @"NSURLConnection";
-    item2.bridgeClass = [NSURLConnectionController class];
-    [self.lists addObjectsFromArray:@[item1,item2]];
+    item2.title = @"GET异步";
+    item2.block = ^{
+        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
+        [manage GET:NSURLConnectionTypeGetAsync url:address params:params complete:^(id jsonObject, NSError *error) {
+            if (error) {
+                NSLog(@"error:%@",error);
+            }
+            NSLog(@"请求");
+        }];
+    };
+    XXMBridgeModel *item3= [[XXMBridgeModel alloc] init];
+    item3.title = @"GETDelegate";
+    item3.block = ^{
+        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
+        [manage GET:NSURLConnectionTypeGetDelegate url:address params:params complete:^(id jsonObject, NSError *error) {
+            if (error) {
+                NSLog(@"error:%@",error);
+            }
+            NSLog(@"请求");
+        }];
+    };
+    [self.lists addObjectsFromArray:@[item1,item2,item3]];
     [self.tableView reloadData];
 }
 #pragma mark - Table view data source
@@ -59,7 +86,8 @@
         item.block();
         return;
     }
-    if(item.bridgeClass){
+    if(item.bridgeClass)
+    {
         UIViewController *vc = [[item.bridgeClass alloc] init];
         if ([vc isKindOfClass:[UIViewController class]]) {
             vc.navigationItem.title = item.title;

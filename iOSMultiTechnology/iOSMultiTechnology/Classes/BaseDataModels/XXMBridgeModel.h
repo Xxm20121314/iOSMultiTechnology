@@ -11,7 +11,7 @@
 typedef void (^BridgeBlock)(void);
 @interface XXMBridgeModel : NSObject
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) Class linkClass;
+@property (nonatomic, assign) Class bridgeClass;
 
 /**
   如果block 有值 忽略linkClass‘

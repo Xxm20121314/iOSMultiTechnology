@@ -22,9 +22,8 @@
 {
     XXMBridgeModel *item1= [[XXMBridgeModel alloc] init];
     item1.title = @"网络相关";
-    item1.linkClass = [NetWorkTableController class];
+    item1.bridgeClass = [NetWorkTableController class];
     [self.lists addObjectsFromArray:@[item1]];
-    self.tableView.rowHeight = [XXMBridgeCell defaultHeight];
     [self.tableView reloadData];
 }
 #pragma mark - Table view data source
@@ -53,9 +52,8 @@
         item.block();
         return;
     }
-    if(item.linkClass)
-    {
-        UIViewController *vc = [[item.linkClass alloc] init];
+    if(item.bridgeClass){
+        UIViewController *vc = [[item.bridgeClass alloc] init];
         if ([vc isKindOfClass:[UIViewController class]]) {
             vc.navigationItem.title = item.title;
             [self.navigationController pushViewController:vc animated:YES];
