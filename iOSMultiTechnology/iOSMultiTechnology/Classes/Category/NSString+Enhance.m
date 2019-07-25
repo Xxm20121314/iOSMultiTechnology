@@ -21,4 +21,7 @@
     }
     return paramsString;
 }
++ (NSString*)toString:(NSObject *)object {
+    return [NSString stringWithFormat:@"%@", object == nil || object == [NSNull null] ? @"" : object];
+}
 @end

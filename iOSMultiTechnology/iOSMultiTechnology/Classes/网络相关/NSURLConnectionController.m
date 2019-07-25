@@ -60,7 +60,45 @@
             NSLog(@"GETDelegate请求成功:%@",jsonObject);
         }];
     };
-    [self.lists addObjectsFromArray:@[item1,item2,item3]];
+    
+    XXMBridgeModel *item4= [[XXMBridgeModel alloc] init];
+    item4.title = @"POST同步";
+    item4.block = ^{
+        
+        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
+        [manage POST:NSURLConnectionTypePostSync url:address params:params complete:^(id jsonObject, NSError *error) {
+            if (error) {
+                NSLog(@"error:%@",error);
+            }
+            NSLog(@"POST同步请求成功:%@",jsonObject);
+        }];
+    };
+    
+    XXMBridgeModel *item5 = [[XXMBridgeModel alloc] init];
+    item5.title = @"POST异步";
+    item5.block = ^{
+        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
+        [manage POST:NSURLConnectionTypePostAsync url:address params:params complete:^(id jsonObject, NSError *error) {
+            if (error) {
+                NSLog(@"error:%@",error);
+            }
+            NSLog(@"POST异步请求成功:%@",jsonObject);
+        }];
+    };
+    
+    XXMBridgeModel *item6= [[XXMBridgeModel alloc] init];
+    item6.title = @"POSTDelegate";
+    item6.block = ^{
+        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
+        [manage POST:NSURLConnectionTypePostDelegate url:address params:params complete:^(id jsonObject, NSError *error) {
+            if (error) {
+                NSLog(@"error:%@",error);
+            }
+            NSLog(@"POSTelegate请求成功:%@",jsonObject);
+        }];
+    };
+    
+    [self.lists addObjectsFromArray:@[item1,item2,item3,item4,item5,item6]];
     [self.tableView reloadData];
 }
 #pragma mark - Table view data source

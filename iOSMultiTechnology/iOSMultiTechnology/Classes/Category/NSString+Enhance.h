@@ -10,5 +10,6 @@
 
 @interface NSString (Enhance)
 + (NSString *)paramsStringWithParams:(NSDictionary *)paramsp;
++ (NSString *)toString:(NSObject *)object;
 @end
 
