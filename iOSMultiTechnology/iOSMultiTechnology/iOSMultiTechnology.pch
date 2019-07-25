@@ -1,0 +1,15 @@
+//
+//  iOSMultiTechnology.pch
+//  iOSMultiTechnology
+//
+//  Created by 许小明 on 2019/7/25.
+//  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
+//
+
+#ifndef iOSMultiTechnology_pch
+#define iOSMultiTechnology_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* iOSMultiTechnology_pch */
