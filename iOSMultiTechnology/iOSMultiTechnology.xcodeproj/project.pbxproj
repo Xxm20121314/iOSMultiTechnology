@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FB6FA4122E9D05F00FFF9FB /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		5FD14EB822E9411700F5FD7E /* iOSMultiTechnology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMultiTechnology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD14EBB22E9411700F5FD7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5FD14EBC22E9411700F5FD7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FB6FA4022E9D02200FFF9FB /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				5FB6FA4122E9D05F00FFF9FB /* AppMacro.h */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
 		5FD14EAF22E9411700F5FD7E = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +111,7 @@
 			children = (
 				5FD14EBB22E9411700F5FD7E /* AppDelegate.h */,
 				5FD14EBC22E9411700F5FD7E /* AppDelegate.m */,
+				5FB6FA4022E9D02200FFF9FB /* Marco */,
 				5FD14EEA22E94CF800F5FD7E /* Classes */,
 				5FD14EC422E9411800F5FD7E /* Assets.xcassets */,
 				5FD14EC922E9411800F5FD7E /* Info.plist */,

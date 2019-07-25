@@ -21,20 +21,22 @@
 - (void)setUp
 {
     NSString *address = @"http://apis.juhe.cn/cook/category";
-    NSDictionary *params = @{@"parentid":@(0), //分类ID,默认全部
+    NSDictionary *params = @{@"parentid":@(101), //分类ID,默认全部
                              @"dtype":@"json",  //返回数据的格式,xml或json，默认json
                              @"key":@"bc2ee87d058a09f523e817ad1eb300e5"};
     XXMBridgeModel *item1= [[XXMBridgeModel alloc] init];
     item1.title = @"GET同步";
     item1.block = ^{
+        
         NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
         [manage GET:NSURLConnectionTypeGetSync url:address params:params complete:^(id jsonObject, NSError *error) {
             if (error) {
                 NSLog(@"error:%@",error);
             }
-            NSLog(@"请求");
+            NSLog(@"GET同步请求成功:%@",jsonObject);
         }];
     };
+    
     XXMBridgeModel *item2= [[XXMBridgeModel alloc] init];
     item2.title = @"GET异步";
     item2.block = ^{
@@ -43,9 +45,10 @@
             if (error) {
                 NSLog(@"error:%@",error);
             }
-            NSLog(@"请求");
+            NSLog(@"GET异步请求成功:%@",jsonObject);
         }];
     };
+    
     XXMBridgeModel *item3= [[XXMBridgeModel alloc] init];
     item3.title = @"GETDelegate";
     item3.block = ^{
@@ -54,7 +57,7 @@
             if (error) {
                 NSLog(@"error:%@",error);
             }
-            NSLog(@"请求");
+            NSLog(@"GETDelegate请求成功:%@",jsonObject);
         }];
     };
     [self.lists addObjectsFromArray:@[item1,item2,item3]];

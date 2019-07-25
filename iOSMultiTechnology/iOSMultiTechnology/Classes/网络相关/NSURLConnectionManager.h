@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+
 typedef NS_OPTIONS(NSUInteger, NSURLConnectionGetType){
     NSURLConnectionTypeGetSync   = 1 << 0,
     NSURLConnectionTypeGetAsync   = 1 << 1,
     NSURLConnectionTypeGetDelegate  = 1 << 2,
 };
+typedef void (^CompleteBlock)(id jsonObject,NSError *error);
 @interface NSURLConnectionManager : NSObject
 
-- (void)GET:(NSURLConnectionGetType)type url:(NSString *)url params:(NSDictionary *)params  complete:(void (^)(id jsonObject,NSError *error))complete;
+- (void)GET:(NSURLConnectionGetType)type url:(NSString *)url params:(NSDictionary *)params  complete:(CompleteBlock)complete;
 - (void)POST;
 @end
 
