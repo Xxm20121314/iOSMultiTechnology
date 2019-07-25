@@ -20,6 +20,9 @@
 		5FD14EF922E9509D00F5FD7E /* XXMBridgeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14EF822E9509D00F5FD7E /* XXMBridgeModel.m */; };
 		5FD14EFC22E9517400F5FD7E /* XXMBridgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14EFB22E9517400F5FD7E /* XXMBridgeCell.m */; };
 		5FD14F0422E9530800F5FD7E /* NetWorkTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */; };
+		5FD14F0822E9567500F5FD7E /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14F0722E9567500F5FD7E /* BaseRequest.m */; };
+		5FD14F0B22E956A600F5FD7E /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14F0A22E956A600F5FD7E /* NetWorkManager.m */; };
+		5FD14F1022E957DE00F5FD7E /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14F0F22E957DE00F5FD7E /* BaseWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,12 @@
 		5FD14EFB22E9517400F5FD7E /* XXMBridgeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXMBridgeCell.m; sourceTree = "<group>"; };
 		5FD14F0222E9530800F5FD7E /* NetWorkTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkTableController.h; sourceTree = "<group>"; };
 		5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkTableController.m; sourceTree = "<group>"; };
+		5FD14F0622E9567500F5FD7E /* BaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
+		5FD14F0722E9567500F5FD7E /* BaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
+		5FD14F0922E956A600F5FD7E /* NetWorkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
+		5FD14F0A22E956A600F5FD7E /* NetWorkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
+		5FD14F0E22E957DE00F5FD7E /* BaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		5FD14F0F22E957DE00F5FD7E /* BaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +113,8 @@
 				5FD14EE122E94C6900F5FD7E /* BaseTableViewController.m */,
 				5FD14ED722E949A700F5FD7E /* MainNavigationController.h */,
 				5FD14ED822E949A700F5FD7E /* MainNavigationController.m */,
+				5FD14F0E22E957DE00F5FD7E /* BaseWebViewController.h */,
+				5FD14F0F22E957DE00F5FD7E /* BaseWebViewController.m */,
 			);
 			path = BaseControllers;
 			sourceTree = "<group>";
@@ -129,6 +140,7 @@
 		5FD14EEA22E94CF800F5FD7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5FD14F0522E9564900F5FD7E /* BaseRequest */,
 				5FD14EF622E94FFF00F5FD7E /* BaseDataModels */,
 				5FD14ED322E9496300F5FD7E /* BaseControllers */,
 				5FD14EF522E94FDD00F5FD7E /* BaseViews */,
@@ -166,6 +178,17 @@
 				5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */,
 			);
 			path = "网络相关";
+			sourceTree = "<group>";
+		};
+		5FD14F0522E9564900F5FD7E /* BaseRequest */ = {
+			isa = PBXGroup;
+			children = (
+				5FD14F0622E9567500F5FD7E /* BaseRequest.h */,
+				5FD14F0722E9567500F5FD7E /* BaseRequest.m */,
+				5FD14F0922E956A600F5FD7E /* NetWorkManager.h */,
+				5FD14F0A22E956A600F5FD7E /* NetWorkManager.m */,
+			);
+			path = BaseRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,13 +263,16 @@
 				5FD14EF122E94F6500F5FD7E /* BaseTableViewCell.m in Sources */,
 				5FD14ECB22E9411800F5FD7E /* main.m in Sources */,
 				5FD14EDF22E94C4A00F5FD7E /* BaseViewController.m in Sources */,
+				5FD14F0B22E956A600F5FD7E /* NetWorkManager.m in Sources */,
 				5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */,
 				5FD14EE522E94C9F00F5FD7E /* HomeTableViewController.m in Sources */,
 				5FD14EFC22E9517400F5FD7E /* XXMBridgeCell.m in Sources */,
+				5FD14F0822E9567500F5FD7E /* BaseRequest.m in Sources */,
 				5FD14ED922E949A700F5FD7E /* MainNavigationController.m in Sources */,
 				5FD14EE222E94C6900F5FD7E /* BaseTableViewController.m in Sources */,
 				5FD14F0422E9530800F5FD7E /* NetWorkTableController.m in Sources */,
 				5FD14EE922E94CB300F5FD7E /* OtherTableViewController.m in Sources */,
+				5FD14F1022E957DE00F5FD7E /* BaseWebViewController.m in Sources */,
 				5FD14ED622E9498800F5FD7E /* MainTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

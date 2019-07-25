@@ -7,14 +7,10 @@
 //
 
 #import "HomeTableViewController.h"
-#import "XXMBridgeModel.h"
-
-#import "XXMBridgeCell.h"
 
 #import "NetWorkTableController.h"
 @interface HomeTableViewController ()
 @property (nonatomic,strong) NSMutableArray *lists;
-
 @end
 
 @implementation HomeTableViewController

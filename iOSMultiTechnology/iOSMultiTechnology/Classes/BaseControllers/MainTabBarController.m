@@ -16,11 +16,23 @@
 @end
 
 @implementation MainTabBarController
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initTabBarView];
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // 回首页时显示底部tabbar
+    if (self.viewControllers.count > self.selectedIndex) {
+        UINavigationController *nav = self.viewControllers[self.selectedIndex];
+        if ([nav isKindOfClass:[UINavigationController class]] && nav.viewControllers.count == 1) {
+            [self.tabBar setHidden:NO];
+        }
+    }
+}
+#pragma mark - s初始化
 - (void)initTabBarView{
     
     //必须要在这里写 标题，否则底部文字会有重叠
@@ -38,15 +50,17 @@
     NSArray *navArrays = @[nav1,nav2];
     self.viewControllers = navArrays;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if (navigationController.viewControllers.count > 1) {
+        [UIView animateWithDuration:.3 animations:^{
+            self.tabBar.hidden = YES;
+        }];
+    }else if(navigationController.viewControllers.count == 1){
+        [UIView animateWithDuration:.3 animations:^{
+            self.tabBar.hidden = NO;
+        }];
+    }
 }
-*/
 
 @end
