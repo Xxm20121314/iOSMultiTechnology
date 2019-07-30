@@ -6,11 +6,11 @@
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "BaseTableViewController.h"
+#import "MainBridgeController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OtherTableViewController : BaseTableViewController
+@interface OtherTableViewController : MainBridgeController
 
 @end
 

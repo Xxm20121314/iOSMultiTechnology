@@ -23,18 +23,18 @@
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSString *js = @"document.title";
     self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:js];
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 }
 -(UIWebView*)webView
 {

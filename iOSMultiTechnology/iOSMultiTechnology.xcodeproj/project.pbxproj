@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F4A2B4122EEA70E00A119D2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B3F22EEA70E00A119D2 /* Foundation+Log.m */; };
+		5F4A2B4722EEE31D00A119D2 /* JSONAndXMLParserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */; };
+		5F4A2B4A22EEE67B00A119D2 /* MainBridgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4922EEE67B00A119D2 /* MainBridgeController.m */; };
+		5F4A2B4D22EFE65D00A119D2 /* JSONParserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4C22EFE65D00A119D2 /* JSONParserViewController.m */; };
 		5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14EBC22E9411700F5FD7E /* AppDelegate.m */; };
 		5FD14EC522E9411800F5FD7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD14EC422E9411800F5FD7E /* Assets.xcassets */; };
 		5FD14ECB22E9411800F5FD7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14ECA22E9411800F5FD7E /* main.m */; };
@@ -26,9 +30,17 @@
 		5FD14F1622E9962700F5FD7E /* NSURLConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14F1522E9962700F5FD7E /* NSURLConnectionManager.m */; };
 		5FD14F1B22E99B3100F5FD7E /* NSString+Enhance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14F1A22E99B3100F5FD7E /* NSString+Enhance.m */; };
 		5FD14F2122E9A30800F5FD7E /* NSURLConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14F2022E9A30800F5FD7E /* NSURLConnectionController.m */; };
+		6EAA007B3AD12DCEE6767F9B /* libPods-iOSMultiTechnology.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD024E8330A5A937FBF37B /* libPods-iOSMultiTechnology.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F4A2B3F22EEA70E00A119D2 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		5F4A2B4522EEE31D00A119D2 /* JSONAndXMLParserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAndXMLParserController.h; sourceTree = "<group>"; };
+		5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAndXMLParserController.m; sourceTree = "<group>"; };
+		5F4A2B4822EEE67B00A119D2 /* MainBridgeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainBridgeController.h; sourceTree = "<group>"; };
+		5F4A2B4922EEE67B00A119D2 /* MainBridgeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainBridgeController.m; sourceTree = "<group>"; };
+		5F4A2B4B22EFE65D00A119D2 /* JSONParserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParserViewController.h; sourceTree = "<group>"; };
+		5F4A2B4C22EFE65D00A119D2 /* JSONParserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONParserViewController.m; sourceTree = "<group>"; };
 		5FB6FA4122E9D05F00FFF9FB /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		5FD14EB822E9411700F5FD7E /* iOSMultiTechnology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMultiTechnology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD14EBB22E9411700F5FD7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +81,9 @@
 		5FD14F1A22E99B3100F5FD7E /* NSString+Enhance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Enhance.m"; sourceTree = "<group>"; };
 		5FD14F1F22E9A30800F5FD7E /* NSURLConnectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLConnectionController.h; sourceTree = "<group>"; };
 		5FD14F2022E9A30800F5FD7E /* NSURLConnectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLConnectionController.m; sourceTree = "<group>"; };
+		96FD024E8330A5A937FBF37B /* libPods-iOSMultiTechnology.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSMultiTechnology.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28AAF1B03A850B0A4C75FFC /* Pods-iOSMultiTechnology.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMultiTechnology.release.xcconfig"; path = "Target Support Files/Pods-iOSMultiTechnology/Pods-iOSMultiTechnology.release.xcconfig"; sourceTree = "<group>"; };
+		F206CE4AE9841BE984742B80 /* Pods-iOSMultiTechnology.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMultiTechnology.debug.xcconfig"; path = "Target Support Files/Pods-iOSMultiTechnology/Pods-iOSMultiTechnology.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +91,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAA007B3AD12DCEE6767F9B /* libPods-iOSMultiTechnology.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4750AD31A9CB5FA208A9332E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F206CE4AE9841BE984742B80 /* Pods-iOSMultiTechnology.debug.xcconfig */,
+				D28AAF1B03A850B0A4C75FFC /* Pods-iOSMultiTechnology.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F4A2B3922EE838400A119D2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5F4A2B5022F034AA00A119D2 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				5FD14F1422E9962700F5FD7E /* NSURLConnectionManager.h */,
+				5FD14F1522E9962700F5FD7E /* NSURLConnectionManager.m */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		5F4A2B5122F034D900A119D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FD14F0222E9530800F5FD7E /* NetWorkTableController.h */,
+				5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */,
+				5FD14F1F22E9A30800F5FD7E /* NSURLConnectionController.h */,
+				5FD14F2022E9A30800F5FD7E /* NSURLConnectionController.m */,
+				5F4A2B4522EEE31D00A119D2 /* JSONAndXMLParserController.h */,
+				5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */,
+				5F4A2B4B22EFE65D00A119D2 /* JSONParserViewController.h */,
+				5F4A2B4C22EFE65D00A119D2 /* JSONParserViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		5FB6FA4022E9D02200FFF9FB /* Marco */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +151,8 @@
 			children = (
 				5FD14EBA22E9411700F5FD7E /* iOSMultiTechnology */,
 				5FD14EB922E9411700F5FD7E /* Products */,
+				4750AD31A9CB5FA208A9332E /* Pods */,
+				704F3C4862740F091625CA9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +192,8 @@
 				5FD14ED822E949A700F5FD7E /* MainNavigationController.m */,
 				5FD14F0E22E957DE00F5FD7E /* BaseWebViewController.h */,
 				5FD14F0F22E957DE00F5FD7E /* BaseWebViewController.m */,
+				5F4A2B4822EEE67B00A119D2 /* MainBridgeController.h */,
+				5F4A2B4922EEE67B00A119D2 /* MainBridgeController.m */,
 			);
 			path = BaseControllers;
 			sourceTree = "<group>";
@@ -159,6 +219,7 @@
 		5FD14EEA22E94CF800F5FD7E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5F4A2B3922EE838400A119D2 /* Helpers */,
 				5FD14F1722E99AE600F5FD7E /* Category */,
 				5FD14F0522E9564900F5FD7E /* BaseRequest */,
 				5FD14EF622E94FFF00F5FD7E /* BaseDataModels */,
@@ -194,12 +255,8 @@
 		5FD14EFD22E951F300F5FD7E /* 网络相关 */ = {
 			isa = PBXGroup;
 			children = (
-				5FD14F0222E9530800F5FD7E /* NetWorkTableController.h */,
-				5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */,
-				5FD14F1422E9962700F5FD7E /* NSURLConnectionManager.h */,
-				5FD14F1522E9962700F5FD7E /* NSURLConnectionManager.m */,
-				5FD14F1F22E9A30800F5FD7E /* NSURLConnectionController.h */,
-				5FD14F2022E9A30800F5FD7E /* NSURLConnectionController.m */,
+				5F4A2B5122F034D900A119D2 /* Controllers */,
+				5F4A2B5022F034AA00A119D2 /* DataModels */,
 			);
 			path = "网络相关";
 			sourceTree = "<group>";
@@ -220,8 +277,17 @@
 			children = (
 				5FD14F1922E99B3100F5FD7E /* NSString+Enhance.h */,
 				5FD14F1A22E99B3100F5FD7E /* NSString+Enhance.m */,
+				5F4A2B3F22EEA70E00A119D2 /* Foundation+Log.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		704F3C4862740F091625CA9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96FD024E8330A5A937FBF37B /* libPods-iOSMultiTechnology.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +297,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FD14ECE22E9411800F5FD7E /* Build configuration list for PBXNativeTarget "iOSMultiTechnology" */;
 			buildPhases = (
+				EF0BF88607B30A4D40B02AE9 /* [CP] Check Pods Manifest.lock */,
 				5FD14EB422E9411700F5FD7E /* Sources */,
 				5FD14EB522E9411700F5FD7E /* Frameworks */,
 				5FD14EB622E9411700F5FD7E /* Resources */,
@@ -287,19 +354,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EF0BF88607B30A4D40B02AE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSMultiTechnology-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5FD14EB422E9411700F5FD7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5FD14EF922E9509D00F5FD7E /* XXMBridgeModel.m in Sources */,
+				5F4A2B4D22EFE65D00A119D2 /* JSONParserViewController.m in Sources */,
 				5FD14F1B22E99B3100F5FD7E /* NSString+Enhance.m in Sources */,
+				5F4A2B4A22EEE67B00A119D2 /* MainBridgeController.m in Sources */,
 				5FD14EF122E94F6500F5FD7E /* BaseTableViewCell.m in Sources */,
+				5F4A2B4722EEE31D00A119D2 /* JSONAndXMLParserController.m in Sources */,
 				5FD14F1622E9962700F5FD7E /* NSURLConnectionManager.m in Sources */,
 				5FD14ECB22E9411800F5FD7E /* main.m in Sources */,
 				5FD14EDF22E94C4A00F5FD7E /* BaseViewController.m in Sources */,
 				5FD14F0B22E956A600F5FD7E /* NetWorkManager.m in Sources */,
 				5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */,
+				5F4A2B4122EEA70E00A119D2 /* Foundation+Log.m in Sources */,
 				5FD14EE522E94C9F00F5FD7E /* HomeTableViewController.m in Sources */,
 				5FD14EFC22E9517400F5FD7E /* XXMBridgeCell.m in Sources */,
 				5FD14F0822E9567500F5FD7E /* BaseRequest.m in Sources */,
@@ -430,6 +526,7 @@
 		};
 		5FD14ECF22E9411800F5FD7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F206CE4AE9841BE984742B80 /* Pods-iOSMultiTechnology.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -451,6 +548,7 @@
 		};
 		5FD14ED022E9411800F5FD7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D28AAF1B03A850B0A4C75FFC /* Pods-iOSMultiTechnology.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
