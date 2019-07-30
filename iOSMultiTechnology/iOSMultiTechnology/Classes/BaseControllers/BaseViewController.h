@@ -11,7 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
+/**
+ 桥接 目标参数
+ */
+@property (nonatomic, strong) NSDictionary *destParams;
 
+//显示log数据
+- (void)showTipStr:(NSString*)string;
 @end
 
 NS_ASSUME_NONNULL_END

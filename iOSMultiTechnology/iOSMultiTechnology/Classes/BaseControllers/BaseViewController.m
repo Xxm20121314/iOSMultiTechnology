@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 
 @interface BaseViewController ()
-
+@property (nonatomic, strong) UILabel *tipLabel;
 @end
 
 @implementation BaseViewController
@@ -20,6 +20,20 @@
     // Do any additional setup after loading the view.
 }
 
+ - (void)showTipStr:(NSString *)string
+{
+    self.tipLabel.text = string;
+   self.tipLabel.size =  [self.tipLabel sizeThatFits:self.view.size];
+}
+- (UILabel *)tipLabel
+{
+    if (!_tipLabel) {
+        _tipLabel = [[UILabel alloc] initWithFrame:(CGRect){0,0,0,0}];
+        _tipLabel.numberOfLines = 0;
+        [self.view addSubview:self.tipLabel];
+    }
+    return _tipLabel;
+}
 /*
 #pragma mark - Navigation
 

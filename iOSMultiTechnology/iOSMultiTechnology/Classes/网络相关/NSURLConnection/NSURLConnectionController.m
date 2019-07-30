@@ -21,7 +21,7 @@
                              @"dtype":@"json",  //返回数据的格式,xml或json，默认json
                              @"key":@"bc2ee87d058a09f523e817ad1eb300e5"};
     XXMBridgeModel *item0= [[XXMBridgeModel alloc] init];
-    item0.title = @"NSURLConnection使用说明";
+    item0.title = @"NSURLConnection简书";
     item0.block = ^{
         BaseWebViewController *web = [[BaseWebViewController alloc] init];
         web.urlString = @"https://www.jianshu.com/p/1ddf42be4e65";

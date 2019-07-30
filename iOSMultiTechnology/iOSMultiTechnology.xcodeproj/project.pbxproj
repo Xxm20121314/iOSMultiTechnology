@@ -10,7 +10,13 @@
 		5F4A2B4122EEA70E00A119D2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B3F22EEA70E00A119D2 /* Foundation+Log.m */; };
 		5F4A2B4722EEE31D00A119D2 /* JSONAndXMLParserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */; };
 		5F4A2B4A22EEE67B00A119D2 /* MainBridgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4922EEE67B00A119D2 /* MainBridgeController.m */; };
-		5F4A2B4D22EFE65D00A119D2 /* JSONParserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4C22EFE65D00A119D2 /* JSONParserViewController.m */; };
+		5F4A2B5622F03C3100A119D2 /* JSONParserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B5522F03C3100A119D2 /* JSONParserViewController.m */; };
+		5F4A2B5922F03D8300A119D2 /* XMLParserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B5822F03D8300A119D2 /* XMLParserViewController.m */; };
+		5F4A2B5F22F042D700A119D2 /* OCToModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B5E22F042D700A119D2 /* OCToModelViewController.m */; };
+		5F4A2B6522F0433C00A119D2 /* OCToJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B6422F0433C00A119D2 /* OCToJSONViewController.m */; };
+		5F4A2B6A22F045AD00A119D2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B6922F045AD00A119D2 /* UIView+Layout.m */; };
+		5F4A2B6F22F04F0E00A119D2 /* YYCookingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B6E22F04F0E00A119D2 /* YYCookingDataModel.m */; };
+		5F4A2B7222F04F1B00A119D2 /* MJCookingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B7122F04F1B00A119D2 /* MJCookingDataModel.m */; };
 		5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14EBC22E9411700F5FD7E /* AppDelegate.m */; };
 		5FD14EC522E9411800F5FD7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD14EC422E9411800F5FD7E /* Assets.xcassets */; };
 		5FD14ECB22E9411800F5FD7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14ECA22E9411800F5FD7E /* main.m */; };
@@ -39,8 +45,20 @@
 		5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAndXMLParserController.m; sourceTree = "<group>"; };
 		5F4A2B4822EEE67B00A119D2 /* MainBridgeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainBridgeController.h; sourceTree = "<group>"; };
 		5F4A2B4922EEE67B00A119D2 /* MainBridgeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainBridgeController.m; sourceTree = "<group>"; };
-		5F4A2B4B22EFE65D00A119D2 /* JSONParserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParserViewController.h; sourceTree = "<group>"; };
-		5F4A2B4C22EFE65D00A119D2 /* JSONParserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONParserViewController.m; sourceTree = "<group>"; };
+		5F4A2B5422F03C3100A119D2 /* JSONParserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONParserViewController.h; sourceTree = "<group>"; };
+		5F4A2B5522F03C3100A119D2 /* JSONParserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONParserViewController.m; sourceTree = "<group>"; };
+		5F4A2B5722F03D8300A119D2 /* XMLParserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLParserViewController.h; sourceTree = "<group>"; };
+		5F4A2B5822F03D8300A119D2 /* XMLParserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLParserViewController.m; sourceTree = "<group>"; };
+		5F4A2B5D22F042D700A119D2 /* OCToModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCToModelViewController.h; sourceTree = "<group>"; };
+		5F4A2B5E22F042D700A119D2 /* OCToModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCToModelViewController.m; sourceTree = "<group>"; };
+		5F4A2B6322F0433C00A119D2 /* OCToJSONViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCToJSONViewController.h; sourceTree = "<group>"; };
+		5F4A2B6422F0433C00A119D2 /* OCToJSONViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCToJSONViewController.m; sourceTree = "<group>"; };
+		5F4A2B6822F045AD00A119D2 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		5F4A2B6922F045AD00A119D2 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		5F4A2B6D22F04F0E00A119D2 /* YYCookingDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYCookingDataModel.h; sourceTree = "<group>"; };
+		5F4A2B6E22F04F0E00A119D2 /* YYCookingDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYCookingDataModel.m; sourceTree = "<group>"; };
+		5F4A2B7022F04F1B00A119D2 /* MJCookingDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJCookingDataModel.h; sourceTree = "<group>"; };
+		5F4A2B7122F04F1B00A119D2 /* MJCookingDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJCookingDataModel.m; sourceTree = "<group>"; };
 		5FB6FA4122E9D05F00FFF9FB /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		5FD14EB822E9411700F5FD7E /* iOSMultiTechnology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMultiTechnology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD14EBB22E9411700F5FD7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,23 +137,38 @@
 			children = (
 				5FD14F1422E9962700F5FD7E /* NSURLConnectionManager.h */,
 				5FD14F1522E9962700F5FD7E /* NSURLConnectionManager.m */,
+				5F4A2B6D22F04F0E00A119D2 /* YYCookingDataModel.h */,
+				5F4A2B6E22F04F0E00A119D2 /* YYCookingDataModel.m */,
+				5F4A2B7022F04F1B00A119D2 /* MJCookingDataModel.h */,
+				5F4A2B7122F04F1B00A119D2 /* MJCookingDataModel.m */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
 		};
-		5F4A2B5122F034D900A119D2 /* Controllers */ = {
+		5F4A2B5222F03B9900A119D2 /* NSURLConnection */ = {
 			isa = PBXGroup;
 			children = (
-				5FD14F0222E9530800F5FD7E /* NetWorkTableController.h */,
-				5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */,
 				5FD14F1F22E9A30800F5FD7E /* NSURLConnectionController.h */,
 				5FD14F2022E9A30800F5FD7E /* NSURLConnectionController.m */,
+			);
+			path = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		5F4A2B5322F03BC800A119D2 /* JSONAndXML */ = {
+			isa = PBXGroup;
+			children = (
+				5F4A2B5722F03D8300A119D2 /* XMLParserViewController.h */,
+				5F4A2B5822F03D8300A119D2 /* XMLParserViewController.m */,
+				5F4A2B5422F03C3100A119D2 /* JSONParserViewController.h */,
+				5F4A2B5522F03C3100A119D2 /* JSONParserViewController.m */,
+				5F4A2B6322F0433C00A119D2 /* OCToJSONViewController.h */,
+				5F4A2B6422F0433C00A119D2 /* OCToJSONViewController.m */,
+				5F4A2B5D22F042D700A119D2 /* OCToModelViewController.h */,
+				5F4A2B5E22F042D700A119D2 /* OCToModelViewController.m */,
 				5F4A2B4522EEE31D00A119D2 /* JSONAndXMLParserController.h */,
 				5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */,
-				5F4A2B4B22EFE65D00A119D2 /* JSONParserViewController.h */,
-				5F4A2B4C22EFE65D00A119D2 /* JSONParserViewController.m */,
 			);
-			path = Controllers;
+			path = JSONAndXML;
 			sourceTree = "<group>";
 		};
 		5FB6FA4022E9D02200FFF9FB /* Marco */ = {
@@ -255,7 +288,10 @@
 		5FD14EFD22E951F300F5FD7E /* 网络相关 */ = {
 			isa = PBXGroup;
 			children = (
-				5F4A2B5122F034D900A119D2 /* Controllers */,
+				5FD14F0222E9530800F5FD7E /* NetWorkTableController.h */,
+				5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */,
+				5F4A2B5322F03BC800A119D2 /* JSONAndXML */,
+				5F4A2B5222F03B9900A119D2 /* NSURLConnection */,
 				5F4A2B5022F034AA00A119D2 /* DataModels */,
 			);
 			path = "网络相关";
@@ -275,6 +311,8 @@
 		5FD14F1722E99AE600F5FD7E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5F4A2B6822F045AD00A119D2 /* UIView+Layout.h */,
+				5F4A2B6922F045AD00A119D2 /* UIView+Layout.m */,
 				5FD14F1922E99B3100F5FD7E /* NSString+Enhance.h */,
 				5FD14F1A22E99B3100F5FD7E /* NSString+Enhance.m */,
 				5F4A2B3F22EEA70E00A119D2 /* Foundation+Log.m */,
@@ -385,7 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FD14EF922E9509D00F5FD7E /* XXMBridgeModel.m in Sources */,
-				5F4A2B4D22EFE65D00A119D2 /* JSONParserViewController.m in Sources */,
+				5F4A2B5922F03D8300A119D2 /* XMLParserViewController.m in Sources */,
 				5FD14F1B22E99B3100F5FD7E /* NSString+Enhance.m in Sources */,
 				5F4A2B4A22EEE67B00A119D2 /* MainBridgeController.m in Sources */,
 				5FD14EF122E94F6500F5FD7E /* BaseTableViewCell.m in Sources */,
@@ -393,17 +431,23 @@
 				5FD14F1622E9962700F5FD7E /* NSURLConnectionManager.m in Sources */,
 				5FD14ECB22E9411800F5FD7E /* main.m in Sources */,
 				5FD14EDF22E94C4A00F5FD7E /* BaseViewController.m in Sources */,
+				5F4A2B6F22F04F0E00A119D2 /* YYCookingDataModel.m in Sources */,
 				5FD14F0B22E956A600F5FD7E /* NetWorkManager.m in Sources */,
 				5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */,
 				5F4A2B4122EEA70E00A119D2 /* Foundation+Log.m in Sources */,
 				5FD14EE522E94C9F00F5FD7E /* HomeTableViewController.m in Sources */,
 				5FD14EFC22E9517400F5FD7E /* XXMBridgeCell.m in Sources */,
+				5F4A2B7222F04F1B00A119D2 /* MJCookingDataModel.m in Sources */,
 				5FD14F0822E9567500F5FD7E /* BaseRequest.m in Sources */,
 				5FD14ED922E949A700F5FD7E /* MainNavigationController.m in Sources */,
 				5FD14EE222E94C6900F5FD7E /* BaseTableViewController.m in Sources */,
+				5F4A2B5622F03C3100A119D2 /* JSONParserViewController.m in Sources */,
+				5F4A2B6A22F045AD00A119D2 /* UIView+Layout.m in Sources */,
+				5F4A2B5F22F042D700A119D2 /* OCToModelViewController.m in Sources */,
 				5FD14F0422E9530800F5FD7E /* NetWorkTableController.m in Sources */,
 				5FD14F2122E9A30800F5FD7E /* NSURLConnectionController.m in Sources */,
 				5FD14EE922E94CB300F5FD7E /* OtherTableViewController.m in Sources */,
+				5F4A2B6522F0433C00A119D2 /* OCToJSONViewController.m in Sources */,
 				5FD14F1022E957DE00F5FD7E /* BaseWebViewController.m in Sources */,
 				5FD14ED622E9498800F5FD7E /* MainTabBarController.m in Sources */,
 			);

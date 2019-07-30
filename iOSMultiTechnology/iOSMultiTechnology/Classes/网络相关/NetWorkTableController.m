@@ -19,7 +19,7 @@
 {
     
     XXMBridgeModel *item1= [[XXMBridgeModel alloc] init];
-    item1.title = @"HTTP知识点";
+    item1.title = @"HTTP简书";
     item1.block = ^{
         BaseWebViewController *web = [[BaseWebViewController alloc] init];
         web.urlString = @"https://www.jianshu.com/p/4f2a08a7aa9e";

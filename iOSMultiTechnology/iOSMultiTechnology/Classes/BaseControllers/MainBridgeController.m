@@ -7,7 +7,7 @@
 //
 
 #import "MainBridgeController.h"
-
+@class BaseViewController;
 @interface MainBridgeController ()
 
 @end
@@ -46,6 +46,11 @@
     }
     if(item.bridgeClass){
         UIViewController *vc = [[item.bridgeClass alloc] init];
+        if (item.destParams){
+            if ([vc isKindOfClass:[BaseViewController class]]) {
+                [(BaseViewController*)vc setDestParams:item.destParams];
+            }
+        }
         if ([vc isKindOfClass:[UIViewController class]]) {
             vc.navigationItem.title = item.title;
             [self.navigationController pushViewController:vc animated:YES];
