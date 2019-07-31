@@ -8,9 +8,14 @@
 
 #import "OCToModelViewController.h"
 
-#import "MJCookingDataModel.h"
+#import "NSURLConnectionManager.h"
 
+#import "MJCookingDataModel.h"
 #import "YYCookingDataModel.h"
+
+#import "YYNewsDataModel.h"
+#import "MJNewsDataModel.h"
+
 @interface OCToModelViewController ()
 /** <# 注释 #>*/
 @property (nonatomic, assign) BOOL isYYModel;
@@ -55,7 +60,7 @@
 
 }
 #pragma mark - OC对象->JSON对象(本地)
-- (NSDictionary*)localDataDic
+- (void)LocalOCToJSON
 {
     NSDictionary *dataObj = @{ @"resultcode":@(200),
                                @"reason":@"Success",
@@ -76,14 +81,9 @@
                                                          @"parentId":@(10001)},
                                                        ]}]
                                };
-    return dataObj;
-}
-- (void)LocalOCToJSON
-{
-    NSDictionary *dataObj = [self localDataDic];
+    
     NSArray *list = dataObj[@"result"];
     NSMutableArray *dataArray = [NSMutableArray new];
-    
     if (self.isYYModel) {
         NSLog(@"YYModel：开始解析");
         [list enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -106,13 +106,44 @@
         NSLog(@"data:%@",dataArray);
         if (dataArray) {
             MJCookingDataModel *model = dataArray.firstObject;
-          NSLog(@"MJExtension：解析开始后\n parentId:%@\n name:%@ \n list:%@",@(model.parentId),model.name,model.list);
+            NSLog(@"MJExtension：解析开始后\n parentId:%@\n name:%@ \n list:%@",@(model.parentId),model.name,model.list);
         }
     }
 }
+
 #pragma mark - OC对象->JSON对象(服务器)
 - (void)ServerOCToJSON
 {
+    NSString *address = @"http://v.juhe.cn/toutiao/index";
+    NSDictionary *params = @{@"type":@"top",
+                             @"dtype":@"json",  //json
+                             @"key":@"6f32779a067f86e9818845e403ce1f25"};
     
+    kWeakSelf
+    NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
+    [manage GET:address params:params dataBlock:^(NSData *resultData, NSError *error) {
+        if (error) {
+            NSLog(@"error:%@",error);
+            return ;
+        }
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
+        //处理网络数据
+        [weakSelf handData:dict];
+    }];
+}
+- (void)handData:(NSDictionary*)dict
+{
+    NSDictionary *dataDic = dict[@"result"];
+    if (self.isYYModel) {
+        NSLog(@"YYModel：开始解析");
+        YYNewsDataModel *model = [[YYNewsDataModel alloc] init];
+        [model yy_modelSetWithDictionary:dataDic];
+        NSLog(@"YYModel：解析后\n stat:%@\n data:%@",@(model.stat),model.newsLists);
+    }else{
+        NSLog(@"MJExtension：开始解析");
+        MJNewsDataModel *model = [[MJNewsDataModel alloc] init];
+        [model mj_setKeyValues:dataDic];
+        NSLog(@"MJExtension：解析后\n stat:%@\n data:%@",@(model.stat),model.newsLists);
+    }
 }
 @end

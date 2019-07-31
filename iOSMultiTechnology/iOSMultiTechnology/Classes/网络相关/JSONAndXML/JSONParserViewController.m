@@ -16,14 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *address = @"http://apis.juhe.cn/cook/category";
-    NSDictionary *params = @{@"parentid":@(10001), //分类ID,默认全部
-                                    @"dtype":@"json",  //json
-                                    @"key":@"bc2ee87d058a09f523e817ad1eb300e5"};
+    NSString *address = @"http://v.juhe.cn/toutiao/index";
+    /**
+     type top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
+     */
+    NSDictionary *params = @{@"type":@"top",
+                             @"dtype":@"json",  //json
+                             @"key":@"6f32779a067f86e9818845e403ce1f25"};
 
     kWeakSelf
     NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-    [manage GET:address params:params data:^(NSData *resultData, NSError *error) {
+    [manage GET:address params:params dataBlock:^(NSData *resultData, NSError *error) {
         if (error) {
             NSLog(@"error:%@",error);
             return ;
@@ -46,7 +49,7 @@
      */
     id obj = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     NSLog(@"JSONParser: obj:\n%@",obj);
-    [self showTipStr:[obj description]];
+    [self showTipStr:@"查看日志打印"];
 }
 
 

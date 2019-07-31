@@ -15,7 +15,6 @@
 @property (nonatomic,   copy) NSDictionary *POSTParams;
 
 @property (nonatomic,  copy) CompleteBlock complete;
-@property (nonatomic,  copy) DataBlock dataBlock;
 
 @end
 @implementation NSURLConnectionManager
@@ -180,9 +179,6 @@
     if (self.complete) {
         self.complete(obj, nil);
     }
-    if (self.dataBlock) {
-        self.dataBlock(self.resultData, nil);
-    }
 }
 #pragma mark - POST方法
 - (void)POST:(RNSURLConnectionRequestType)type url:(NSString *)url params:(NSDictionary *)params complete:(CompleteBlock)complete
@@ -331,12 +327,16 @@
     //    [connect cancel];
 }
 #pragma mark - 返回NSData 数据
-- (void)GET:(NSString *)url params:(NSDictionary *)params data:(DataBlock)data
+- (void)GET:(NSString *)url params:(NSDictionary *)params dataBlock:(DataBlock)dataBlock
 {
     self.GETURLstring = [NSString stringWithFormat:@"%@?%@",url,[NSString paramsStringWithParams:params]];
-    self.dataBlock = data;
-    // 方法3 代理
-    [self _getDelegate];
+    NSLog(@"GET异步请求地址: %@",self.GETURLstring);
+    NSURL *URL = [NSURL URLWithString:self.GETURLstring];
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:URL];
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {;
+        dataBlock(data, connectionError);
+    }];
 }
 #pragma mark - Setters 
 #pragma mark 中文转码处理

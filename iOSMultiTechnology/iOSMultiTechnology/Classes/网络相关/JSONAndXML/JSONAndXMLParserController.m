@@ -21,6 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    XXMBridgeModel *item0= [[XXMBridgeModel alloc] init];
+    item0.title = @"JSON和XML[简书]";
+    item0.block = ^{
+        BaseWebViewController *web = [[BaseWebViewController alloc] init];
+        web.urlString = @"https://www.jianshu.com/p/2b0d84b812e6";
+        [self.navigationController pushViewController:web animated:YES];
+    };
+    
     XXMBridgeModel *item1 = [[XXMBridgeModel alloc] init];
     item1.title = @"JSON解析(JSON数据 -> OC对象)";
     item1.bridgeClass = [JSONParserViewController class];
@@ -40,10 +49,10 @@
     item4.bridgeClass = [OCToModelViewController class];
     
     XXMBridgeModel *item5 = [[XXMBridgeModel alloc] init];
-    item5.title = @"XML解析";
+    item5.title = @"XML解析(NSXMLParser)";
     item5.bridgeClass = [XMLParserViewController class];
-
-    [self.lists addObjectsFromArray:@[item1,item2,item3,item4,item5]];
+    
+    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4,item5]];
     [self.tableView reloadData];
 }
 

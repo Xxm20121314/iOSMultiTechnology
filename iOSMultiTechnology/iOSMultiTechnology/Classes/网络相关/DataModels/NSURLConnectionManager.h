@@ -28,6 +28,6 @@ typedef void (^DataBlock)(NSData *resultData,NSError *error);
 /**
   返回NSData 数据
  */
-- (void)GET:(NSString *)url params:(NSDictionary *)params  data:(DataBlock)data;
+- (void)GET:(NSString *)url params:(NSDictionary *)params  dataBlock:(DataBlock)dataBlock;
 @end
 

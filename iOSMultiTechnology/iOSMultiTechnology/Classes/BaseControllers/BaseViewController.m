@@ -33,6 +33,8 @@
         [self.view addSubview:self.tipLabel];
     }
     return _tipLabel;
+    
+    
 }
 /*
 #pragma mark - Navigation
