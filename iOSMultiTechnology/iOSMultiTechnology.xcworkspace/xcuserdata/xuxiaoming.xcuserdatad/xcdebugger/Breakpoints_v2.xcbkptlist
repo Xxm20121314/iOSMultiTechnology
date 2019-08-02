@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/&#x7f51;&#x7edc;&#x76f8;&#x5173;/DataModels/YYNewsDataModel.m"
-            timestampString = "586233143.652751"
+            timestampString = "586409101.702962"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/&#x7f51;&#x7edc;&#x76f8;&#x5173;/DataModels/YYNewsDataModel.m"
-            timestampString = "586233143.652922"
+            timestampString = "586409101.703082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "+modelContainerPropertyGenericClass"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOSMultiTechnology/Classes/&#x7f51;&#x7edc;&#x76f8;&#x5173;/JSONAndXML/XMLParserViewController.m"
-            timestampString = "586233143.65303"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-parser:didStartElement:namespaceURI:qualifiedName:attributes:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

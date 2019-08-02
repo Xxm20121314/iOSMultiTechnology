@@ -8,5 +8,7 @@ pod 'AFNetworking'
 pod 'MBProgressHUD'
 pod 'YYModel'
 pod 'MJExtension'
+pod 'SSZipArchive'
+
 end
 

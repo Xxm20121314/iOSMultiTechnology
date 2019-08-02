@@ -11,5 +11,7 @@
 @interface NSString (Enhance)
 + (NSString *)paramsStringWithParams:(NSDictionary *)paramsp;
 + (NSString *)toString:(NSObject *)object;
+#pragma mark 中文转码处理
++ (NSString*)GETCNString:(NSString *)string;
 @end
 

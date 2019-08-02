@@ -69,10 +69,13 @@
         NSLog(@"error:%@",error);
         return;
     }
-    NSString *path = [kDocumentPath stringByAppendingPathComponent:@"123.json"];
+    NSString *path = [kCachesPath stringByAppendingPathComponent:@"123.json"];
     [data writeToFile:path atomically:YES];
     NSLog(@"查看Document中Jjson数据:\n%@",path);
     [self showTipStr:[NSString stringWithFormat:@"请查看文件路径中具体json文件:\n%@",path]];
 
+}- (void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 @end

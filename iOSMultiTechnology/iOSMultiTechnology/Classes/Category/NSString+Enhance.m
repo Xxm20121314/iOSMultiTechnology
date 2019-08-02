@@ -24,4 +24,8 @@
 + (NSString*)toString:(NSObject *)object {
     return [NSString stringWithFormat:@"%@", object == nil || object == [NSNull null] ? @"" : object];
 }
++ (NSString*)GETCNString:(NSString *)string
+{
+    return [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
 @end

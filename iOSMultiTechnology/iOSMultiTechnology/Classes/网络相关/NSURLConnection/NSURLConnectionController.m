@@ -9,6 +9,13 @@
 #import "NSURLConnectionController.h"
 #import "NSURLConnectionManager.h"
 
+#import "NSURLConnGetSyncController.h"
+#import "NSURLConnGetAsyncController.h"
+#import "NSURLConnPOSTSyncController.h"
+#import "NSURLConnPOSTAsyncController.h"
+#import "NSURLConnGCDRunLoopController.h"
+#import "NSURLConnGetDelegateController.h"
+#import "NSURLConnPOSTDelegateController.h"
 @implementation NSURLConnectionController
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -16,109 +23,53 @@
 }
 - (void)setUp
 {
-    NSString *address = @"http://apis.juhe.cn/cook/category";
-    NSDictionary *params = @{@"parentid":@(0), //分类ID,默认全部
-                             @"dtype":@"json",  //返回数据的格式,xml或json，默认json
-                             @"key":@"bc2ee87d058a09f523e817ad1eb300e5"};
-    XXMBridgeModel *item0= [[XXMBridgeModel alloc] init];
+    kWeakSelf
+    XXMBridgeModel *item0 = [[XXMBridgeModel alloc] init];
     item0.title = @"NSURLConnection简书";
     item0.block = ^{
         BaseWebViewController *web = [[BaseWebViewController alloc] init];
         web.urlString = @"https://www.jianshu.com/p/1ddf42be4e65";
-        [self.navigationController pushViewController:web animated:YES];
+        [weakSelf.navigationController pushViewController:web animated:YES];
     };
     
-    XXMBridgeModel *item1= [[XXMBridgeModel alloc] init];
+    XXMBridgeModel *item1 = [[XXMBridgeModel alloc] init];
     item1.title = @"GET同步请求";
-    item1.block = ^{
-        
-        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-        [manage GET:NSURLConnectionTypRequestSync url:address params:params complete:^(id jsonObject, NSError *error) {
-            if (error) {
-                NSLog(@"error:%@",error);
-            }
-            NSLog(@"GET同步请求成功:%@",jsonObject);
-            [self alert: @"GET同步" msg:jsonObject];
-
-        }];
-    };
+    item1.subTitle = @"阻塞线程";
+    item1.bridgeClass = [NSURLConnGetSyncController class];
     
-    XXMBridgeModel *item2= [[XXMBridgeModel alloc] init];
+    XXMBridgeModel *item2 = [[XXMBridgeModel alloc] init];
     item2.title = @"GET异步请求";
-    item2.block = ^{
-        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-        [manage GET:NSURLConnectionTypeRequestAsync url:address params:params complete:^(id jsonObject, NSError *error) {
-            if (error) {
-                NSLog(@"error:%@",error);
-            }
-            NSLog(@"GET异步请求成功:%@",jsonObject);
-            [self alert: @"GET异步" msg:jsonObject];
+    item2.subTitle = @"不阻塞线程";
+    item2.bridgeClass = [NSURLConnGetAsyncController class];
 
-        }];
-    };
     
-    XXMBridgeModel *item3= [[XXMBridgeModel alloc] init];
+    XXMBridgeModel *item3 = [[XXMBridgeModel alloc] init];
     item3.title = @"GETDelegate请求";
-    item3.block = ^{
-        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-        [manage GET:NSURLConnectionTypeRequestDelegate url:address params:params complete:^(id jsonObject, NSError *error) {
-            if (error) {
-                NSLog(@"error:%@",error);
-            }
-            NSLog(@"GETDelegate请求成功:%@",jsonObject);
-            [self alert: @"GETDelegate" msg:jsonObject];
-
-        }];
-    };
-    XXMBridgeModel *item4= [[XXMBridgeModel alloc] init];
+    item3.subTitle = @"默认主线程";
+    item3.bridgeClass = [NSURLConnGetDelegateController class];
+    
+    XXMBridgeModel *item4 = [[XXMBridgeModel alloc] init];
     item4.title = @"POST同步请求";
-    item4.block = ^{
-        
-        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-        [manage POST:NSURLConnectionTypRequestSync url:address params:params complete:^(id jsonObject, NSError *error) {
-            if (error) {
-                NSLog(@"error:%@",error);
-            }
-            NSLog(@"POST同步请求成功:%@",jsonObject);
-            [self alert: @"POST异步" msg:jsonObject];
-        }];
-    };
+    item4.subTitle = @"阻塞线程";
+    item4.bridgeClass = [NSURLConnPOSTSyncController class];
     
     XXMBridgeModel *item5 = [[XXMBridgeModel alloc] init];
     item5.title = @"POST异步请求";
-    item5.block = ^{
-        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-        [manage POST:NSURLConnectionTypeRequestAsync url:address params:params complete:^(id jsonObject, NSError *error) {
-            if (error) {
-                NSLog(@"error:%@",error);
-            }
-            NSLog(@"POST异步请求成功:%@",jsonObject);
-            [self alert: @"POST异步" msg:jsonObject];
-        }];
-    };
+    item5.subTitle = @"不阻塞线程";
+    item5.bridgeClass = [NSURLConnPOSTAsyncController class];
     
-    XXMBridgeModel *item6= [[XXMBridgeModel alloc] init];
+    XXMBridgeModel *item6 = [[XXMBridgeModel alloc] init];
     item6.title = @"POSTDelegate请求";
-    item6.block = ^{
-        NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-        [manage POST:NSURLConnectionTypeRequestDelegate url:address params:params complete:^(id jsonObject, NSError *error) {
-            if (error) {
-                NSLog(@"error:%@",error);
-            }
-            NSLog(@"POSTelegate请求成功:%@",jsonObject);
-             [self alert: @"POSTelegate" msg:jsonObject];
-        }];
-    };
-    
-    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4,item5,item6]];
+    item6.subTitle = @"默认主线程";
+    item6.bridgeClass = [NSURLConnPOSTDelegateController class];
+
+    XXMBridgeModel *item7 = [[XXMBridgeModel alloc] init];
+    item7.title = @"多线程请求";
+    item7.subTitle = @"GCD、RunLoop";
+    item7.bridgeClass = [NSURLConnGCDRunLoopController class];
+
+    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4,item5,item6,item7]];
     [self.tableView reloadData];
-}
-- (void)alert:(NSString*)title msg:(NSString*)msg
-{
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleCancel handler:nil];
-    [alertVC addAction:action];
-    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 

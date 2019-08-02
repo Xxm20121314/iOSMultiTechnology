@@ -8,7 +8,6 @@
 
 #import "NSURLConnectionManager.h"
 @interface NSURLConnectionManager()<NSURLConnectionDataDelegate>
-/** 注释 */
 @property (nonatomic, strong) NSMutableData *resultData;
 @property (nonatomic,   copy) NSString *GETURLstring;
 @property (nonatomic,   copy) NSString *POSTURLstring;
@@ -68,6 +67,7 @@
     //该方法是阻塞的,即如果该方法没有执行完则后面的代码将得不到执行
     // 如果一次返回的data很大，会占用很大的内存空间
     NSLog(@"GET 同步开始阻塞");
+    
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     NSLog(@"GET 同步结束阻塞");
     //4.解析 data--->字符串
@@ -104,6 +104,7 @@
      connectionError:错误信息
      */
     NSLog(@"GET 异步开始1");
+    kWeakSelf
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         NSLog(@"GET 异步结束");
         //4.解析数据
@@ -112,7 +113,6 @@
         NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
         NSLog(@"statusCode:%zd",res.statusCode);
         NSLog(@"GET 线程：%@",[NSThread currentThread]);
-        kWeakSelf
         if (![[NSThread currentThread] isMainThread]) {
             NSLog(@"GET 不是主线程");
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -135,7 +135,7 @@
     NSURL *url = [NSURL URLWithString:self.GETURLstring];
     //2.创建请求对象
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    //3.设置代理,发送请求
+    //3.设置代理,发送请求 (默认在主线程中调用的)
     //3.1
     //NSURLConnection * connect = [NSURLConnection connectionWithRequest:request delegate:self];
     //3.2
@@ -144,41 +144,13 @@
     //(startImmediately == YES 会发送 | startImmediately == NO 则需要调用start方法)
     NSURLConnection * connect = [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:NO];
     [connect start];
-    //4.0 取消请求
+    /**
+     4. 设置代理方法在哪个线程中调用，非主队列开主线程
+     [[NSOperationQueue alloc] init] 开子线程
+     */
+    [connect setDelegateQueue:[[NSOperationQueue alloc] init]];
+    //5.取消请求
 //    [connect cancel];
-}
-#pragma mark - NSURLConnectionDataDelegate
-//1.当接收到服务器响应的时候调用
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    NSLog(@"%s",__func__);
-    NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
-    NSLog(@"statusCode:%zd",res.statusCode);
-
-}
-//2.接收到服务器返回数据的时候调用,调用多次
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    NSLog(@"%s",__func__);
-    //拼接数据
-    [self.resultData appendData:data];
-}
-//3.当请求失败的时候调用
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    NSLog(@"%s",__func__);
-    if (self.complete) {
-        self.complete(nil, error);
-    }
-}
-//4.请求结束的时候调用
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"%s",__func__);
-    id obj = [[NSString alloc]initWithData:self.resultData encoding:NSUTF8StringEncoding];
-    if (self.complete) {
-        self.complete(obj, nil);
-    }
 }
 #pragma mark - POST方法
 - (void)POST:(RNSURLConnectionRequestType)type url:(NSString *)url params:(NSDictionary *)params complete:(CompleteBlock)complete
@@ -271,6 +243,7 @@
 //    NSOperationQueue *queue = [NSOperationQueue mainQueue];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     NSLog(@"POST 异步开始1");
+    kWeakSelf
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         NSLog(@"POST 异步结束");
         //4.解析数据
@@ -280,7 +253,6 @@
         NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
         NSLog(@"statusCode:%zd",res.statusCode);
         NSLog(@"POST 线程：%@",[NSThread currentThread]);
-        kWeakSelf
         if (![[NSThread currentThread] isMainThread]) {
             NSLog(@"POST 不是主线程");
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -314,7 +286,7 @@
     //4.设置请求体信息,字符串--->NSData
     NSData *bodyData = [[NSString paramsStringWithParams:self.POSTParams] dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPBody = bodyData;
-    //5.设置代理,发送请求
+    //5.设置代理,发送请求  (默认在主线程中调用的)
     //5.1
     //NSURLConnection * connect = [NSURLConnection connectionWithRequest:request delegate:self];
     //5.2
@@ -322,8 +294,14 @@
     //5.3 设置代理,时候发送请求需要检查startImmediately的值
     //(startImmediately == YES 会发送 | startImmediately == NO 则需要调用start方法)
     NSURLConnection * connect = [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:NO];
+    /**
+     6. 设置代理方法在哪个线程中调用，非主队列开主线程
+     [[NSOperationQueue alloc] init] 开子线程
+     */
+    [connect setDelegateQueue:[NSOperationQueue mainQueue]];
     [connect start];
-    //4.0 取消请求
+    NSLog(@"就换几回合");
+    //7.0 取消请求
     //    [connect cancel];
 }
 #pragma mark - 返回NSData 数据
@@ -338,6 +316,55 @@
         dataBlock(data, connectionError);
     }];
 }
+#pragma mark - NSURLConnectionDataDelegate
+//1.当接收到服务器响应的时候调用
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"%s",__func__);
+    NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
+    NSLog(@"statusCode:%zd",res.statusCode);
+    NSLog(@"currentThread: %@",[NSThread currentThread]);
+
+}
+//2.接收到服务器返回数据的时候调用,调用多次
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"%s",__func__);
+    //拼接数据
+    [self.resultData appendData:data];
+}
+//3.当请求失败的时候调用
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%s",__func__);
+    kWeakSelf
+    if (![[NSThread currentThread] isMainThread]) {
+        NSLog(@"不是主线程");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.complete(nil, error);
+        });
+    }else{
+        NSLog(@"主线程");
+        weakSelf.complete(nil, error);
+    }
+}
+//4.请求结束的时候调用
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"%s",__func__);
+    id obj = [[NSString alloc]initWithData:self.resultData encoding:NSUTF8StringEncoding];
+
+    kWeakSelf
+    if (![[NSThread currentThread] isMainThread]) {
+        NSLog(@"不是主线程");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.complete(obj, nil);
+        });
+    }else{
+        NSLog(@"主线程");
+        weakSelf.complete(obj, nil);
+    }
+}
 #pragma mark - Setters 
 #pragma mark 中文转码处理
 - (void)setGETURLstring:(NSString *)GETURLstring
@@ -351,6 +378,10 @@
         _resultData = [NSMutableData data];
     }
     return _resultData;
+}
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 
 @end

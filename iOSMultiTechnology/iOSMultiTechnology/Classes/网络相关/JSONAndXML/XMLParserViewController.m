@@ -17,35 +17,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *address = @"http://v.juhe.cn/postcode/query";
+    [self showTipStr:@"点击屏幕"];
 
-    NSDictionary *params = @{@"postcode":@"363102",
-                             @"dtype":@"xml",  //xml
-                             @"key":@"8c779318943a236498e999cef88e99c2"};
-    kWeakSelf
-    NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
-    [manage GET:address params:params dataBlock:^(NSData *resultData, NSError *error) {
-        if (error) {
-            NSLog(@"error:%@",error);
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self NSXMLParser];
+}
+- (void)NSXMLParser
+{
+    NSString *address = kAPIURL_news_toutiao_list;
+    NSDictionary *params = @{@"type":@"top",
+                             @"dtype":@"xml",
+                             @"key":@"6f32779a067f86e9818845e403ce1f25"};
+    
+    NSString *finallyString = [NSString stringWithFormat:@"%@?%@",address,[NSString paramsStringWithParams:params]];
+    
+    NSURL *url = [NSURL URLWithString:finallyString];
+    
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
+    
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    NSLog(@"请求: %@",finallyString);
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        if (connectionError) {
             return ;
         }
-        id xmlData = [[NSString alloc]initWithData:resultData encoding:NSUTF8StringEncoding];
-        NSLog(@"xmlData:\n %@",xmlData);
-        //XML数据 -> OC对象
-        [weakSelf xmlParser:resultData];
+        NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
+        NSString *obj = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"obj:%@",obj);
+
+        NSLog(@"statusCode:%zd",res.statusCode);
+        NSLog(@"currentThread：%@",[NSThread currentThread]);
+        //1 创建XML解析器:SAX
+        NSXMLParser *parser = [[NSXMLParser alloc]initWithData:data];
+        //2 设置代理
+        parser.delegate = self;
+        //3 开始解析,阻塞
+        [parser parse];
     }];
-}
-- (void)xmlParser:(NSData*)data
-{
-    //使用NSXMLParser解析XML步骤和代理方法
-    //1. 创建XML解析器:SAX
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
-    //2. 设置代理
-    parser.delegate = self;
-    //3 开始解析, 阻塞
-    NSLog(@"阻塞开始");
-    [parser parse];
-    NSLog(@"阻塞结束");
 }
 #pragma mark - NSXMLParserDelegate
 //当扫描到文档的开始时调用（开始解析）
@@ -61,17 +71,10 @@
 //当扫描到元素的开始时调用（attributeDict存放着元素的属性）
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict
 {
-    NSLog(@"开始解析:%@==%@",elementName,attributeDict);
-    [attributeDict enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
-        NSLog(@"%@==%@",key,obj);
-    }];
-
-    // 过滤根元素
-    if ([elementName isEqualToString:@"root"]) {
-        return;
-    }
-    
+    //只是这样做对于item元素
+    NSLog(@"elementName:%@==attributeDict:%zd",elementName,attributeDict.allKeys.count);
 }
+
 -(void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
 {
     NSLog(@"parseError:%@parseError",parseError);
@@ -88,5 +91,9 @@
         _list = [NSMutableArray new];
     }
     return _list;
+}
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 @end

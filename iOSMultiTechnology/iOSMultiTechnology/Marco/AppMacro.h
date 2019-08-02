@@ -21,7 +21,19 @@
 #pragma mark - 全局唯一
 #define kWindow ([UIApplication sharedApplication].keyWindow)
 #define kAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
-#define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+
+#pragma mark - 文件位置
+// 获取Document目录
+#define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+// 获取Library目录
+#define kLibraryPath [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject]
+// 获取Caches目录
+#define kCachesPath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
+// 获取Preferences目录,通常情况下，Preferences有系统维护，所以我们很少去操作它。
+#define kPreferPath [kLibraryPath stringByAppendingPathComponent:@"Preferences"]
+// 获取tmp目录
+#define kTmpPath = NSTemporaryDirectory()
+
 #define kUserDefault  [NSUserDefaults standardUserDefaults]
 
 #pragma mark - 工具宏

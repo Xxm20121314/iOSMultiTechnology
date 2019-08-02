@@ -35,30 +35,7 @@
     }
     [self initViews];
 }
-- (void)initViews
-{
-    UIButton *localBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [localBtn setTitle:@"数据（本地）" forState:UIControlStateNormal];
-    localBtn.backgroundColor = [UIColor blueColor];
-    [localBtn sizeToFit];
-    [localBtn addTarget:self action:@selector(LocalOCToJSON) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *serverlBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [serverlBtn setTitle:@"数据（服务器）" forState:UIControlStateNormal];
-    [serverlBtn sizeToFit];
-    serverlBtn.backgroundColor = [UIColor blueColor];
-    [serverlBtn addTarget:self action:@selector(ServerOCToJSON) forControlEvents:UIControlEventTouchUpInside];
-    
-    localBtn.top = 50;
-    localBtn.left = 100;
-    
-    serverlBtn.top = 150;
-    serverlBtn.left = 100;
 
-    [self.view addSubview:localBtn];
-    [self.view addSubview:serverlBtn];
-
-}
 #pragma mark - OC对象->JSON对象(本地)
 - (void)LocalOCToJSON
 {
@@ -145,5 +122,34 @@
         [model mj_setKeyValues:dataDic];
         NSLog(@"MJExtension：解析后\n stat:%@\n data:%@",@(model.stat),model.newsLists);
     }
+}
+#pragma mark - initViews
+- (void)initViews
+{
+    UIButton *localBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [localBtn setTitle:@"数据（本地）" forState:UIControlStateNormal];
+    [localBtn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+    [localBtn sizeToFit];
+    [localBtn addTarget:self action:@selector(LocalOCToJSON) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *serverlBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [serverlBtn setTitle:@"数据（服务器）" forState:UIControlStateNormal];
+    [serverlBtn sizeToFit];
+    [serverlBtn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+    [serverlBtn addTarget:self action:@selector(ServerOCToJSON) forControlEvents:UIControlEventTouchUpInside];
+    
+    localBtn.top = 50;
+    localBtn.left = 100;
+    
+    serverlBtn.top = 150;
+    serverlBtn.left = 100;
+    
+    [self.view addSubview:localBtn];
+    [self.view addSubview:serverlBtn];
+    
+}
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 @end

@@ -23,8 +23,7 @@
     NSDictionary *params = @{@"type":@"top",
                              @"dtype":@"json",  //json
                              @"key":@"6f32779a067f86e9818845e403ce1f25"};
-
-    kWeakSelf
+kWeakSelf
     NSURLConnectionManager *manage = [[NSURLConnectionManager alloc] init];
     [manage GET:address params:params dataBlock:^(NSData *resultData, NSError *error) {
         if (error) {
@@ -51,7 +50,10 @@
     NSLog(@"JSONParser: obj:\n%@",obj);
     [self showTipStr:@"查看日志打印"];
 }
-
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
 
 
 @end
