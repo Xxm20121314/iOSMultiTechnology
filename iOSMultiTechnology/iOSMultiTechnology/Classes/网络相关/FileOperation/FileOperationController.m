@@ -1,44 +1,30 @@
 //
-//  DownLoaderController.m
+//  FileOperationController.m
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/7/31.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "DownLoaderController.h"
+#import "FileOperationController.h"
+
+#import "UpLoadController.h"
 #import "DLSmallFileController.h"
+#import "DLMultithreadController.h"
 #import "DLBigFIieResumeController.h"
 #import "DLBigFIieNSFileHandleController.h"
 #import "DLBigFIieNSOutputStreamController.h"
-@interface DownLoaderController ()
+@interface FileOperationController ()
 
 @end
 
-@implementation DownLoaderController
+@implementation FileOperationController
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     if ([self creatDir:kCachesDownloadPath]){
         [self setUp];
     }
-}
-#pragma 创建文件夹
-- (BOOL)creatDir:(NSString *)path{
-    if (path.length==0) {
-        return NO;
-    }
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL isSuccess = YES;
-    BOOL isExist = [fileManager fileExistsAtPath:path];
-    if (isExist==NO) {
-        NSError *error;
-        if (![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error]) {
-            isSuccess = NO;
-            NSLog(@"creat Directory Failed:%@",[error localizedDescription]);
-        }
-    }
-    return isSuccess;
 }
 - (void)setUp
 {
@@ -61,8 +47,35 @@
     item3.subTitle = @"(输出流)NSOutputStream";
     item3.bridgeClass = [DLBigFIieNSOutputStreamController class];
     
-    [self.lists addObjectsFromArray:@[item0,item1,item2,item3]];
+    XXMBridgeModel *item4 = [[XXMBridgeModel alloc] init];
+    item4.title = @"文件上传";
+    item4.subTitle = @"NSURLConnection";
+    item4.bridgeClass = [UpLoadController class];
+    
+    XXMBridgeModel *item5 = [[XXMBridgeModel alloc] init];
+    item5.title = @"文件下载";
+    item5.subTitle = @"多线程（单任务）";
+    item5.bridgeClass = [DLMultithreadController class];
+    
+    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4,item5]];
     [self.tableView reloadData];
+}
+#pragma 创建文件夹
+- (BOOL)creatDir:(NSString *)path{
+    if (path.length==0) {
+        return NO;
+    }
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isSuccess = YES;
+    BOOL isExist = [fileManager fileExistsAtPath:path];
+    if (isExist==NO) {
+        NSError *error;
+        if (![fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error]) {
+            isSuccess = NO;
+            NSLog(@"creat Directory Failed:%@",[error localizedDescription]);
+        }
+    }
+    return isSuccess;
 }
 - (void)dealloc
 {

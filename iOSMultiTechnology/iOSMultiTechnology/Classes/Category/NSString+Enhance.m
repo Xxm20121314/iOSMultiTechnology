@@ -24,8 +24,14 @@
 + (NSString*)toString:(NSObject *)object {
     return [NSString stringWithFormat:@"%@", object == nil || object == [NSNull null] ? @"" : object];
 }
+#pragma mark - 中文转码处理
 + (NSString*)GETCNString:(NSString *)string
 {
     return [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+#pragma mark - b 转成 M 
++ (NSString*)formatByteCount:(long long)size
+{
+    return [NSByteCountFormatter stringFromByteCount:size countStyle:NSByteCountFormatterCountStyleFile];
 }
 @end

@@ -11,7 +11,9 @@
 @interface NSString (Enhance)
 + (NSString *)paramsStringWithParams:(NSDictionary *)paramsp;
 + (NSString *)toString:(NSObject *)object;
-#pragma mark 中文转码处理
+#pragma mark 
 + (NSString*)GETCNString:(NSString *)string;
+/**b转成 M*/
++ (NSString*)formatByteCount:(long long)size;
 @end
 

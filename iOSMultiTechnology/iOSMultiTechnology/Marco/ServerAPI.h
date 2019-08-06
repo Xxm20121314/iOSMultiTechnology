@@ -21,4 +21,7 @@
 //新闻头条 (AppKey：6f32779a067f86e9818845e403ce1f25) 支持xml
 #define  kAPIURL_news_toutiao_list [kBaseUrl stringByAppendingString:@"/toutiao/index"]
 
+//上传语音获得返回路径
+#define  kAPIURL_upload_image @"http://busapi.jiwu.com/base/uploadimage"
+
 #endif /* ServerAPI_h */

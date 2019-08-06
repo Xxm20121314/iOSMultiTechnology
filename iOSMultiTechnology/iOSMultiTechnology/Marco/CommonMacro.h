@@ -10,7 +10,7 @@
 #define CommonMacro_h
 
 // 下载
-#define kDownloadDirName @"download.xxm.com."
+#define kDownloadDirName @"download.xxm.com"
 #define kCachesDownloadPath [kCachesPath stringByAppendingPathComponent:kDownloadDirName]
 // 压缩
 #define kZipDirName @"zip.xxm.com"

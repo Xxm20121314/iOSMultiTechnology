@@ -8,7 +8,7 @@
 
 #import "NetWorkTableController.h"
 
-#import "DownLoaderController.h"
+#import "FileOperationController.h"
 #import "NSURLConnectionController.h"
 #import "JSONAndXMLParserController.h"
 
@@ -46,7 +46,7 @@
     
     XXMBridgeModel *item4= [[XXMBridgeModel alloc] init];
     item4.title = @"文件下载与上传";
-    item4.bridgeClass = [DownLoaderController class];
+    item4.bridgeClass = [FileOperationController class];
     
     
     [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4]];

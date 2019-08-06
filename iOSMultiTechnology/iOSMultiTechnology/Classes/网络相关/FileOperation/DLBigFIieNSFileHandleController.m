@@ -75,6 +75,7 @@
     
     //4.创建文件句柄
     self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:self.fullPath];
+
 }
 //当接收到服务器返回的数据时会调用
 //该方法可能会被调用多次

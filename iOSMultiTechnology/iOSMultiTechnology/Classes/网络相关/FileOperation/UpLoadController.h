@@ -1,16 +1,16 @@
 //
-//  DownLoaderController.h
+//  UpLoadController.h
 //  iOSMultiTechnology
 //
-//  Created by 许小明 on 2019/7/31.
+//  Created by 许小明 on 2019/8/2.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "MainBridgeController.h"
+#import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DownLoaderController : MainBridgeController
+@interface UpLoadController : BaseViewController
 
 @end
 

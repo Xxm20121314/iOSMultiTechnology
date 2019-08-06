@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5F38C71E22F419B00072CEB3 /* love_dir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F38C71C22F419B00072CEB3 /* love_dir.jpg */; };
 		5F38C71F22F419B00072CEB3 /* temple-dir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F38C71D22F419B00072CEB3 /* temple-dir.jpg */; };
+		5F38C72322F427670072CEB3 /* UpLoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F38C72222F427670072CEB3 /* UpLoadController.m */; };
+		5F38C72522F433060072CEB3 /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F38C72422F433050072CEB3 /* avatar.jpg */; };
+		5F38C73522F8093C0072CEB3 /* DLMultithreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F38C73322F8093C0072CEB3 /* DLMultithreadController.m */; };
+		5F38C73622F8093C0072CEB3 /* DLMultithreadController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F38C73422F8093C0072CEB3 /* DLMultithreadController.xib */; };
 		5F4A2B4122EEA70E00A119D2 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B3F22EEA70E00A119D2 /* Foundation+Log.m */; };
 		5F4A2B4722EEE31D00A119D2 /* JSONAndXMLParserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */; };
 		5F4A2B4A22EEE67B00A119D2 /* MainBridgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B4922EEE67B00A119D2 /* MainBridgeController.m */; };
@@ -22,7 +26,7 @@
 		5F4A2B7B22F09EFF00A119D2 /* YYCookingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B7A22F09EFF00A119D2 /* YYCookingDataModel.m */; };
 		5F4A2B7E22F09F0B00A119D2 /* MJCookingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B7D22F09F0B00A119D2 /* MJCookingDataModel.m */; };
 		5F4A2B8022F13E9C00A119D2 /* Frequently.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F4A2B7F22F13E9C00A119D2 /* Frequently.xcassets */; };
-		5F4A2B8722F16F6200A119D2 /* DownLoaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B8622F16F6200A119D2 /* DownLoaderController.m */; };
+		5F4A2B8722F16F6200A119D2 /* FileOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B8622F16F6200A119D2 /* FileOperationController.m */; };
 		5F4A2B8D22F1729A00A119D2 /* DLSmallFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B8C22F1729A00A119D2 /* DLSmallFileController.m */; };
 		5F4A2B9F22F1DDD200A119D2 /* DLBigFIieNSFileHandleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2B9E22F1DDD200A119D2 /* DLBigFIieNSFileHandleController.m */; };
 		5F4A2BA322F1EBA800A119D2 /* ZIpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2BA222F1EBA800A119D2 /* ZIpViewController.m */; };
@@ -65,6 +69,12 @@
 /* Begin PBXFileReference section */
 		5F38C71C22F419B00072CEB3 /* love_dir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = love_dir.jpg; sourceTree = "<group>"; };
 		5F38C71D22F419B00072CEB3 /* temple-dir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "temple-dir.jpg"; sourceTree = "<group>"; };
+		5F38C72122F427670072CEB3 /* UpLoadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpLoadController.h; sourceTree = "<group>"; };
+		5F38C72222F427670072CEB3 /* UpLoadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpLoadController.m; sourceTree = "<group>"; };
+		5F38C72422F433050072CEB3 /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
+		5F38C73222F8093C0072CEB3 /* DLMultithreadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLMultithreadController.h; sourceTree = "<group>"; };
+		5F38C73322F8093C0072CEB3 /* DLMultithreadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLMultithreadController.m; sourceTree = "<group>"; };
+		5F38C73422F8093C0072CEB3 /* DLMultithreadController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DLMultithreadController.xib; sourceTree = "<group>"; };
 		5F4A2B3F22EEA70E00A119D2 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		5F4A2B4522EEE31D00A119D2 /* JSONAndXMLParserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAndXMLParserController.h; sourceTree = "<group>"; };
 		5F4A2B4622EEE31D00A119D2 /* JSONAndXMLParserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAndXMLParserController.m; sourceTree = "<group>"; };
@@ -89,8 +99,8 @@
 		5F4A2B7C22F09F0B00A119D2 /* MJCookingDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCookingDataModel.h; sourceTree = "<group>"; };
 		5F4A2B7D22F09F0B00A119D2 /* MJCookingDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCookingDataModel.m; sourceTree = "<group>"; };
 		5F4A2B7F22F13E9C00A119D2 /* Frequently.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Frequently.xcassets; sourceTree = "<group>"; };
-		5F4A2B8522F16F6200A119D2 /* DownLoaderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownLoaderController.h; sourceTree = "<group>"; };
-		5F4A2B8622F16F6200A119D2 /* DownLoaderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownLoaderController.m; sourceTree = "<group>"; };
+		5F4A2B8522F16F6200A119D2 /* FileOperationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileOperationController.h; sourceTree = "<group>"; };
+		5F4A2B8622F16F6200A119D2 /* FileOperationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileOperationController.m; sourceTree = "<group>"; };
 		5F4A2B8B22F1729A00A119D2 /* DLSmallFileController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLSmallFileController.h; sourceTree = "<group>"; };
 		5F4A2B8C22F1729A00A119D2 /* DLSmallFileController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLSmallFileController.m; sourceTree = "<group>"; };
 		5F4A2B9D22F1DDD200A119D2 /* DLBigFIieNSFileHandleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLBigFIieNSFileHandleController.h; sourceTree = "<group>"; };
@@ -193,6 +203,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5F38C73722F89B650072CEB3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		5F4A2B3922EE838400A119D2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,13 +277,19 @@
 			path = JSONAndXML;
 			sourceTree = "<group>";
 		};
-		5F4A2B8422F16F3800A119D2 /* DownLoader */ = {
+		5F4A2B8422F16F3800A119D2 /* FileOperation */ = {
 			isa = PBXGroup;
 			children = (
-				5F4A2B8522F16F6200A119D2 /* DownLoaderController.h */,
-				5F4A2B8622F16F6200A119D2 /* DownLoaderController.m */,
+				5F38C72422F433050072CEB3 /* avatar.jpg */,
+				5F38C72122F427670072CEB3 /* UpLoadController.h */,
+				5F38C72222F427670072CEB3 /* UpLoadController.m */,
 				5F4A2B8B22F1729A00A119D2 /* DLSmallFileController.h */,
 				5F4A2B8C22F1729A00A119D2 /* DLSmallFileController.m */,
+				5F38C73222F8093C0072CEB3 /* DLMultithreadController.h */,
+				5F38C73322F8093C0072CEB3 /* DLMultithreadController.m */,
+				5F38C73422F8093C0072CEB3 /* DLMultithreadController.xib */,
+				5F4A2B8522F16F6200A119D2 /* FileOperationController.h */,
+				5F4A2B8622F16F6200A119D2 /* FileOperationController.m */,
 				5F4A2BD222F342F700A119D2 /* DLBigFIieResumeController.h */,
 				5F4A2BD322F342F700A119D2 /* DLBigFIieResumeController.m */,
 				5F4A2B9D22F1DDD200A119D2 /* DLBigFIieNSFileHandleController.h */,
@@ -274,7 +297,7 @@
 				5F4A2BD522F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.h */,
 				5F4A2BD622F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.m */,
 			);
-			path = DownLoader;
+			path = FileOperation;
 			sourceTree = "<group>";
 		};
 		5F4A2BA022F1EB7900A119D2 /* 压缩和解压缩 */ = {
@@ -425,6 +448,7 @@
 		5FD14EF522E94FDD00F5FD7E /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				5F38C73722F89B650072CEB3 /* New Group */,
 				5FD14EEF22E94F6500F5FD7E /* BaseTableViewCell.h */,
 				5FD14EF022E94F6500F5FD7E /* BaseTableViewCell.m */,
 				5FD14EFA22E9517400F5FD7E /* XXMBridgeCell.h */,
@@ -447,7 +471,7 @@
 			children = (
 				5FD14F0222E9530800F5FD7E /* NetWorkTableController.h */,
 				5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */,
-				5F4A2B8422F16F3800A119D2 /* DownLoader */,
+				5F4A2B8422F16F3800A119D2 /* FileOperation */,
 				5F4A2B5322F03BC800A119D2 /* JSONAndXML */,
 				5F4A2B5222F03B9900A119D2 /* NSURLConnection */,
 				5F4A2B5022F034AA00A119D2 /* DataModels */,
@@ -549,7 +573,9 @@
 				5F38C71F22F419B00072CEB3 /* temple-dir.jpg in Resources */,
 				5F4A2B8022F13E9C00A119D2 /* Frequently.xcassets in Resources */,
 				5F4A2BDC22F3E77900A119D2 /* foggy-nature.jpg in Resources */,
+				5F38C73622F8093C0072CEB3 /* DLMultithreadController.xib in Resources */,
 				5F38C71E22F419B00072CEB3 /* love_dir.jpg in Resources */,
+				5F38C72522F433060072CEB3 /* avatar.jpg in Resources */,
 				5FD14EC522E9411800F5FD7E /* Assets.xcassets in Resources */,
 				5F4A2BDD22F3E77900A119D2 /* forest-nature.jpg in Resources */,
 			);
@@ -597,6 +623,8 @@
 				5F4A2B7522F09B8200A119D2 /* YYNewsDataModel.m in Sources */,
 				5F4A2BD722F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.m in Sources */,
 				5FD14EF122E94F6500F5FD7E /* BaseTableViewCell.m in Sources */,
+				5F38C73522F8093C0072CEB3 /* DLMultithreadController.m in Sources */,
+				5F38C72322F427670072CEB3 /* UpLoadController.m in Sources */,
 				5F4A2B4722EEE31D00A119D2 /* JSONAndXMLParserController.m in Sources */,
 				5FD14F1622E9962700F5FD7E /* NSURLConnectionManager.m in Sources */,
 				5F4A2B7B22F09EFF00A119D2 /* YYCookingDataModel.m in Sources */,
@@ -628,7 +656,7 @@
 				5F4A2B6522F0433C00A119D2 /* OCToJSONViewController.m in Sources */,
 				5FD14F1022E957DE00F5FD7E /* BaseWebViewController.m in Sources */,
 				5FD14ED622E9498800F5FD7E /* MainTabBarController.m in Sources */,
-				5F4A2B8722F16F6200A119D2 /* DownLoaderController.m in Sources */,
+				5F4A2B8722F16F6200A119D2 /* FileOperationController.m in Sources */,
 				5F4A2BD122F3227200A119D2 /* NSURLConnGCDRunLoopController.m in Sources */,
 				5F4A2BB322F2842800A119D2 /* NSURLConnGetDelegateController.m in Sources */,
 				5F4A2B8D22F1729A00A119D2 /* DLSmallFileController.m in Sources */,
