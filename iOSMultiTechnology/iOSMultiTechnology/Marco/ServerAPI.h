@@ -22,6 +22,6 @@
 #define  kAPIURL_news_toutiao_list [kBaseUrl stringByAppendingString:@"/toutiao/index"]
 
 //上传语音获得返回路径
-#define  kAPIURL_upload_image @"http://busapi.jiwu.com/base/uploadimage"
+#define  kAPIURL_upload_image @"http://192.168.100.174/base/uploadimage"
 
 #endif /* ServerAPI_h */
