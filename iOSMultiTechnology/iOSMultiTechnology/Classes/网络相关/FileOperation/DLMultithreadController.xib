@@ -50,7 +50,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="wJu-FO-cwh">
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="wJu-FO-cwh">
                     <rect key="frame" x="92" y="81" width="94" height="29"/>
                     <connections>
                         <action selector="stepperChanged:" destination="-1" eventType="valueChanged" id="2zt-H2-bvw"/>
@@ -68,6 +68,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwH-lf-PGI">
+                    <rect key="frame" x="191" y="274" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="f7G-EQ-p6K"/>
+                    </constraints>
+                    <state key="normal" title="播放"/>
+                    <connections>
+                        <action selector="play:" destination="-1" eventType="touchUpInside" id="LpJ-1w-3sw"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -75,6 +85,7 @@
                 <constraint firstItem="TBg-vO-FVV" firstAttribute="top" secondItem="ASo-7t-ahu" secondAttribute="bottom" constant="25" id="FwZ-qa-sHx"/>
                 <constraint firstItem="TBg-vO-FVV" firstAttribute="baseline" secondItem="myO-o1-aIM" secondAttribute="centerY" id="HAy-0d-ifw"/>
                 <constraint firstItem="wde-pY-iWE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="JID-jX-fH9"/>
+                <constraint firstItem="BwH-lf-PGI" firstAttribute="centerX" secondItem="TBg-vO-FVV" secondAttribute="centerX" id="JoA-jC-aTw"/>
                 <constraint firstItem="TBg-vO-FVV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="128" id="LKy-Ok-iWd"/>
                 <constraint firstItem="ASo-7t-ahu" firstAttribute="centerX" secondItem="TBg-vO-FVV" secondAttribute="centerX" id="NKU-DN-GTI"/>
                 <constraint firstItem="wJu-FO-cwh" firstAttribute="leading" secondItem="btK-Ba-wm8" secondAttribute="trailing" constant="30" id="NWT-XG-FZd"/>
@@ -87,6 +98,7 @@
                 <constraint firstItem="ASo-7t-ahu" firstAttribute="top" secondItem="wJu-FO-cwh" secondAttribute="bottom" constant="15" id="nEc-Ma-hEG"/>
                 <constraint firstItem="wJu-FO-cwh" firstAttribute="centerY" secondItem="btK-Ba-wm8" secondAttribute="centerY" id="nO1-dH-kDP"/>
                 <constraint firstAttribute="trailing" secondItem="TBg-vO-FVV" secondAttribute="trailing" constant="60" id="pIW-WK-jLg"/>
+                <constraint firstItem="BwH-lf-PGI" firstAttribute="top" secondItem="TBg-vO-FVV" secondAttribute="bottom" constant="87" id="u45-lw-up3"/>
                 <constraint firstAttribute="trailing" secondItem="wde-pY-iWE" secondAttribute="trailing" constant="30" id="x68-7I-txz"/>
             </constraints>
             <point key="canvasLocation" x="100.00000000000001" y="87.723214285714278"/>

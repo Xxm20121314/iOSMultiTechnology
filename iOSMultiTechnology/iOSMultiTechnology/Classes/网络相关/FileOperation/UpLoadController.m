@@ -23,56 +23,76 @@
     NSLog(@"XXMCreateMultipartFormBoundary:%@",XXMCreateMultipartFormBoundary());
     // Do any additional setup after loading the view.
 }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self upLoad];
+}
 - (void)upLoad
 {
     // 确定请求路径
     NSURL *url = [NSURL URLWithString:kAPIURL_upload_image];
     // 创建可变的请求对象
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.timeoutInterval = 5.0;
     // 设置请求方法
     request.HTTPMethod = @"POST";
-    // 设置请求头信息
-    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",XXMCreateMultipartFormBoundary()] forHTTPHeaderField:@"Content-Type"];
+    /** 设置请求头信息 **/
+    // 设置 Content-Type
+    NSString *boundary = XXMCreateMultipartFormBoundary();
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary] forHTTPHeaderField:@"Content-Type"];
+    UIImage *image = [UIImage imageNamed:@"avatar.jpg"];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSString *strLength = [NSString stringWithFormat:@"%ld", (long)imageData.length];
+//     设置 Content-Length
+    [request setValue:strLength forHTTPHeaderField:@"Content-Length"];
     
-    /** 步骤
-     --分隔符
-     Content-Disposition: form-data; name="file"; filename="imageName.png"
-     Content-Type: image/png(MIMEType:大类型/小类型)
-     空行
-     文件参数
-     */
-    
+    /** 设置请求体 **/
     NSMutableData *fileData = [NSMutableData data];
-    /***文件参数***/
-    //初始化
-    [fileData appendData:[[NSString stringWithFormat:@"--%@",XXMCreateMultipartFormBoundary()] dataUsingEncoding:NSUTF8StringEncoding]];
+    /***文件的参数***/
+    [fileData appendData:[[NSString stringWithFormat:@"--%@",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [fileData appendData:XXMMultipartFormCRLF()];
-
-    /**
-     name:file 服务器规定的参数
-     filename:image.jpg 文件保存到服务器上面的名称
-     Content-Type:文件的类型
-     */
+    // Content-Disposition name和filename 根据服务器字段来定义
     NSString *name = @"file";
-    NSString *filename = @"avatar.jpg";
-    [fileData appendData:XXMMultipartFormDisposition(name, filename)];
+    NSString *filename = @"file.png";
+    [fileData appendData:XXMMultipartFormFileDisposition(name, filename)];
     [fileData appendData:XXMMultipartFormCRLF()];
-
+    
+    // Content-Type (mimeType)
     NSString *mimeType = @"image/jpeg";
     [fileData appendData:XXMMultipartFormContentType(mimeType)];
     [fileData appendData:XXMMultipartFormCRLF()];
     [fileData appendData:XXMMultipartFormCRLF()];
     
-    UIImage *image = [UIImage imageNamed:@"avatar.jpg"];
-    NSData *imageData = UIImagePNGRepresentation(image);
+    // data
     [fileData appendData:imageData];
     [fileData appendData:XXMMultipartFormCRLF()];
-    /***非文件参数***/
-
     
+//    /*** 非文件的参数 ***/
+//    [fileData appendData:[[NSString stringWithFormat:@"--%@",XXMCreateMultipartFormBoundary()] dataUsingEncoding:NSUTF8StringEncoding]];
+//    [fileData appendData:XXMMultipartFormCRLF()];
+//    // Content-Disposition
+//    //  @"appKey" : @"783f82ebefca4957e14e1542dd077f55"
+//    [fileData appendData:XXMMultipartFormNonfFileDisposition(@"appKey")];
+//    [fileData appendData:XXMMultipartFormCRLF()];
+//    [fileData appendData:XXMMultipartFormCRLF()];
+//    [fileData appendData:[@"783f82ebefca4957e14e1542dd077f55" dataUsingEncoding:NSUTF8StringEncoding]];
+//    [fileData appendData:XXMMultipartFormCRLF()];
 
+    //结尾
+    [fileData appendData:[[NSString stringWithFormat:@"--%@--",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+
+    request.HTTPBody = fileData;
+    
+    // 发送请求
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * __nullable response, NSData * __nullable data, NSError * __nullable connectionError) {
+        //7.解析服务器返回的数据
+        NSString *obj = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+
+        NSLog(@"obj:%@",obj);
+        NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+    }];
 }
-//分隔符
+//分隔符 + 随机数 (仿照web请求例子 ----WebKitFormBoundaryELACoLe9jG4DpV21)
 static NSString * XXMCreateMultipartFormBoundary() {
     return [NSString stringWithFormat:@"----WebKitFormBoundary%08X%08X", arc4random(), arc4random()];
 }
@@ -80,9 +100,13 @@ static NSString * XXMCreateMultipartFormBoundary() {
 static NSData * XXMMultipartFormCRLF() {
     return [@"\r\n" dataUsingEncoding:NSUTF8StringEncoding];
 }
-//Content-Disposition
-static NSData * XXMMultipartFormDisposition(NSString * name,NSString *filename ) {
+//Content-Disposition （File）
+static NSData * XXMMultipartFormFileDisposition(NSString * name,NSString *filename ) {
     return  [[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"",name,filename]  dataUsingEncoding:NSUTF8StringEncoding];
+}
+//Content-Disposition （nonFile、params）
+static NSData * XXMMultipartFormNonfFileDisposition(NSString * name) {
+    return  [[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"",name]  dataUsingEncoding:NSUTF8StringEncoding];
 }
 //Content-Type
 static NSData * XXMMultipartFormContentType(NSString * mimeType ) {

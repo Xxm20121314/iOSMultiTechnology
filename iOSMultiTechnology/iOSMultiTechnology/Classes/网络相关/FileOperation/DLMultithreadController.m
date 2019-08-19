@@ -9,6 +9,8 @@
 #import "DLMultithreadController.h"
 
 #import "pthread.h"
+#import <MediaPlayer/MediaPlayer.h>
+
 #define KBigMultiThreadFileName @"海贼王剧场版2009.mp4"
 
 //比较大的资源
@@ -122,7 +124,21 @@
     self.resoureCeconnection = nil;
     NSLog(@"%s",__func__);
 }
-
+- (IBAction)play:(UIButton *)sender
+{
+    if (!self.startDate) {
+        NSLog(@"请先下载");
+        return;
+    }
+    // 1.获取文件地址
+    NSString *fullPath = [kCachesDownloadPath stringByAppendingPathComponent:KBigMultiThreadFileName];
+    // 2.创建播放url
+    NSURL *url = [[NSURL alloc] initFileURLWithPath:fullPath];
+    //3.创建播放控制器
+    MPMoviePlayerViewController *vc = [[MPMoviePlayerViewController alloc]initWithContentURL:url];
+    //4.弹出控制器
+    [self presentViewController:vc animated:YES completion:nil];
+}
 #pragma 设置最大线程数量
 - (void)configStepper
 {
@@ -309,6 +325,7 @@
 {
     NSLog(@"请求失败, 当前未完成的请求%@",self.cacheThreadDic.allKeys);
 }
+
 //当网络请求结束之后调用
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
