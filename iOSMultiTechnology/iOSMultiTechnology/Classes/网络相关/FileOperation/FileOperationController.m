@@ -10,6 +10,7 @@
 
 #import "UpLoadController.h"
 #import "DLSmallFileController.h"
+#import "MIMETypeViewController.h"
 #import "DLMultithreadController.h"
 #import "DLBigFIieResumeController.h"
 #import "DLBigFIieNSFileHandleController.h"
@@ -57,7 +58,12 @@
     item5.subTitle = @"多线程（单任务）";
     item5.bridgeClass = [DLMultithreadController class];
     
-    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4,item5]];
+    
+    XXMBridgeModel *item6 = [[XXMBridgeModel alloc] init];
+    item6.title = @"文件MIMEType类型";
+    item6.bridgeClass = [MIMETypeViewController class];
+    
+    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4,item5,item6]];
     [self.tableView reloadData];
 }
 #pragma 创建文件夹

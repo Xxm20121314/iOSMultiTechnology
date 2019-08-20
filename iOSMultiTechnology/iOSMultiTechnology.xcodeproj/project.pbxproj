@@ -44,6 +44,8 @@
 		5F4A2BD722F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4A2BD622F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.m */; };
 		5F4A2BDC22F3E77900A119D2 /* foggy-nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F4A2BDA22F3E77900A119D2 /* foggy-nature.jpg */; };
 		5F4A2BDD22F3E77900A119D2 /* forest-nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F4A2BDB22F3E77900A119D2 /* forest-nature.jpg */; };
+		5F6FEC9A230A3D23004D8673 /* MIMETypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6FEC99230A3D23004D8673 /* MIMETypeViewController.m */; };
+		5F6FEC9C230BCE46004D8673 /* fried_rice.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6FEC9B230BCE46004D8673 /* fried_rice.png */; };
 		5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14EBC22E9411700F5FD7E /* AppDelegate.m */; };
 		5FD14EC522E9411800F5FD7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD14EC422E9411800F5FD7E /* Assets.xcassets */; };
 		5FD14ECB22E9411800F5FD7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14ECA22E9411800F5FD7E /* main.m */; };
@@ -136,6 +138,9 @@
 		5F4A2BD822F3D33F00A119D2 /* CommonMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacro.h; sourceTree = "<group>"; };
 		5F4A2BDA22F3E77900A119D2 /* foggy-nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "foggy-nature.jpg"; sourceTree = "<group>"; };
 		5F4A2BDB22F3E77900A119D2 /* forest-nature.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "forest-nature.jpg"; sourceTree = "<group>"; };
+		5F6FEC98230A3D23004D8673 /* MIMETypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIMETypeViewController.h; sourceTree = "<group>"; };
+		5F6FEC99230A3D23004D8673 /* MIMETypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIMETypeViewController.m; sourceTree = "<group>"; };
+		5F6FEC9B230BCE46004D8673 /* fried_rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fried_rice.png; sourceTree = "<group>"; };
 		5FB6FA4122E9D05F00FFF9FB /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		5FD14EB822E9411700F5FD7E /* iOSMultiTechnology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMultiTechnology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD14EBB22E9411700F5FD7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -281,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				5F38C72422F433050072CEB3 /* avatar.jpg */,
+				5F6FEC9B230BCE46004D8673 /* fried_rice.png */,
 				5F38C72122F427670072CEB3 /* UpLoadController.h */,
 				5F38C72222F427670072CEB3 /* UpLoadController.m */,
 				5F4A2B8B22F1729A00A119D2 /* DLSmallFileController.h */,
@@ -296,6 +302,8 @@
 				5F4A2B9E22F1DDD200A119D2 /* DLBigFIieNSFileHandleController.m */,
 				5F4A2BD522F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.h */,
 				5F4A2BD622F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.m */,
+				5F6FEC98230A3D23004D8673 /* MIMETypeViewController.h */,
+				5F6FEC99230A3D23004D8673 /* MIMETypeViewController.m */,
 			);
 			path = FileOperation;
 			sourceTree = "<group>";
@@ -575,6 +583,7 @@
 				5F4A2BDC22F3E77900A119D2 /* foggy-nature.jpg in Resources */,
 				5F38C73622F8093C0072CEB3 /* DLMultithreadController.xib in Resources */,
 				5F38C71E22F419B00072CEB3 /* love_dir.jpg in Resources */,
+				5F6FEC9C230BCE46004D8673 /* fried_rice.png in Resources */,
 				5F38C72522F433060072CEB3 /* avatar.jpg in Resources */,
 				5FD14EC522E9411800F5FD7E /* Assets.xcassets in Resources */,
 				5F4A2BDD22F3E77900A119D2 /* forest-nature.jpg in Resources */,
@@ -641,6 +650,7 @@
 				5F4A2B9F22F1DDD200A119D2 /* DLBigFIieNSFileHandleController.m in Sources */,
 				5FD14F0822E9567500F5FD7E /* BaseRequest.m in Sources */,
 				5FD14ED922E949A700F5FD7E /* MainNavigationController.m in Sources */,
+				5F6FEC9A230A3D23004D8673 /* MIMETypeViewController.m in Sources */,
 				5F4A2BCB22F28E2B00A119D2 /* XMLGDataParserViewController.m in Sources */,
 				5FD14EE222E94C6900F5FD7E /* BaseTableViewController.m in Sources */,
 				5F4A2B5622F03C3100A119D2 /* JSONParserViewController.m in Sources */,
