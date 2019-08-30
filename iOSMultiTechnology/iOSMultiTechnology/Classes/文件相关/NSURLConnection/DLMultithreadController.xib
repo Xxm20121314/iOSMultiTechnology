@@ -36,7 +36,7 @@
                         <constraint firstAttribute="height" constant="35" id="RRd-nN-7sq"/>
                         <constraint firstAttribute="width" constant="100" id="S5p-nY-hEV"/>
                     </constraints>
-                    <state key="normal" title="重新下载"/>
+                    <state key="normal" title="开始下载"/>
                     <connections>
                         <action selector="download:" destination="-1" eventType="touchUpInside" id="nzy-z8-Fdv"/>
                     </connections>

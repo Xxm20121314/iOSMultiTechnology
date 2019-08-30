@@ -51,7 +51,7 @@
             }
         }
         if ([vc isKindOfClass:[UIViewController class]]) {
-            vc.navigationItem.title = item.title;
+            vc.navigationItem.title = [NSString stringWithFormat:@"%@%@",item.title,[NSString toString:item.subTitle]];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

@@ -14,6 +14,9 @@
 #import "XXMBridgeCell.h"
 #import "BaseWebViewController.h"
 
+//hepler
+#import "FileManager.h"
+
 // category
 #import "UIView+Layout.h"
 #import "NSString+Enhance.h"

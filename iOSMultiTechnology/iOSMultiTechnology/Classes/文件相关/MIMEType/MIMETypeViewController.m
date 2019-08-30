@@ -61,13 +61,13 @@
 - (void)initViews
 {
     UIButton *downloadBtn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn1 setTitle:@"网络请求" forState:UIControlStateNormal];
+    [downloadBtn1 setTitle:@"1.网络请求" forState:UIControlStateNormal];
     [downloadBtn1 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn1 sizeToFit];
     [downloadBtn1 addTarget:self action:@selector(mimeType1) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *downloadBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn2 setTitle:@"MobileCoreServices" forState:UIControlStateNormal];
+    [downloadBtn2 setTitle:@"2.MobileCoreServices" forState:UIControlStateNormal];
     [downloadBtn2 sizeToFit];
     [downloadBtn2 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn2 addTarget:self action:@selector(mimeType2) forControlEvents:UIControlEventTouchUpInside];

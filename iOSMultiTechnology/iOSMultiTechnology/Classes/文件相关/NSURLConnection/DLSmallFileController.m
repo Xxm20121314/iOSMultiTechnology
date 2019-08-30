@@ -9,7 +9,7 @@
 #import "DLSmallFileController.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-#define KSmallFileName @"海贼王_01.mp4"
+#define KSmallFileName @"NSURLConnection_海贼王_01.mp4"
 @interface DLSmallFileController ()<NSURLConnectionDataDelegate>
 /** 文件data */
 @property (nonatomic, strong) NSMutableData *fileData;
@@ -149,25 +149,25 @@
 - (void)initViews
 {
     UIButton *downloadBtn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn1 setTitle:@"NSData" forState:UIControlStateNormal];
+    [downloadBtn1 setTitle:@"1.NSData(图片)" forState:UIControlStateNormal];
     [downloadBtn1 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn1 sizeToFit];
     [downloadBtn1 addTarget:self action:@selector(download1) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *downloadBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn2 setTitle:@"NSURLConnection-sendAsync" forState:UIControlStateNormal];
+    [downloadBtn2 setTitle:@"2.NSURLConnection-sendAsync(图片)" forState:UIControlStateNormal];
     [downloadBtn2 sizeToFit];
     [downloadBtn2 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn2 addTarget:self action:@selector(download2) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *downloadBtn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn3 setTitle:@"NSURLConnection-delegate" forState:UIControlStateNormal];
+    [downloadBtn3 setTitle:@"3.NSURLConnection-delegate (视频)" forState:UIControlStateNormal];
     [downloadBtn3 sizeToFit];
     [downloadBtn3 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn3 addTarget:self action:@selector(download3) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [playBtn setTitle:@"播放" forState:UIControlStateNormal];
+    [playBtn setTitle:@"播放（视频）" forState:UIControlStateNormal];
     [playBtn sizeToFit];
     [playBtn setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [playBtn addTarget:self action:@selector(playBtnClick) forControlEvents:UIControlEventTouchUpInside];

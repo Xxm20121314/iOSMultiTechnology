@@ -8,7 +8,7 @@
 
 #import "DLBigFIieResumeController.h"
 #import <MediaPlayer/MediaPlayer.h>
-#define KBigResumeFileName @"海贼王_03.mp4"
+#define KBigResumeFileName @"NSURLConnection_海贼王_03.mp4"
 @interface DLBigFIieResumeController ()<NSURLConnectionDataDelegate>
 /** 文件总大小 */
 @property (nonatomic, assign) NSInteger totalSize;

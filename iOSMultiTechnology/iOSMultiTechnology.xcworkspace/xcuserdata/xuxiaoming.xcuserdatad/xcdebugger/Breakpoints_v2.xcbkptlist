@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/&#x7f51;&#x7edc;&#x76f8;&#x5173;/FileOperation/UpLoadController.m"
-            timestampString = "587976295.949883"
+            timestampString = "588483204.819078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "@implementation UpLoadController"
-            landmarkType = "3">
+            landmarkName = "-upLoad"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/&#x7f51;&#x7edc;&#x76f8;&#x5173;/FileOperation/UpLoadController.m"
-            timestampString = "587976295.94998"
+            timestampString = "588483204.819164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
             endingLineNumber = "92"
-            landmarkName = "XXMMultipartFormFileDisposition()"
-            landmarkType = "9">
+            landmarkName = "-upLoad"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,11 +90,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/&#x7f51;&#x7edc;&#x76f8;&#x5173;/FileOperation/UpLoadController.m"
-            timestampString = "587976295.950084"
+            timestampString = "588483204.81923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
+            landmarkName = "-upLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSMultiTechnology/Classes/&#x6587;&#x4ef6;&#x76f8;&#x5173;/NSURLSession/SessionBreakpointDownloadController.m"
+            timestampString = "588838988.487044"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-dealloc"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSMultiTechnology/Classes/Bases/BaseControllers/BaseWebViewController.m"
+            timestampString = "588838988.4871269"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-goBackBtnClick"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSMultiTechnology/Classes/Bases/BaseControllers/BaseWebViewController.m"
+            timestampString = "588838988.487187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-goForwardClick"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSMultiTechnology/Classes/&#x6587;&#x4ef6;&#x76f8;&#x5173;/NSURLSession/SessionUploadViewController.m"
+            timestampString = "588838988.487245"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-upLoad"
             landmarkType = "7">
          </BreakpointContent>

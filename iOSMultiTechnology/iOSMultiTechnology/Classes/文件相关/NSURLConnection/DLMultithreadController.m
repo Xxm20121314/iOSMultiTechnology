@@ -11,7 +11,7 @@
 #import "pthread.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-#define KBigMultiThreadFileName @"海贼王剧场版2009.mp4"
+#define KBigMultiThreadFileName @"NSURLConnection_海贼王剧场版2009.mp4"
 
 //比较大的资源
 #define KDownloadURL @"https://vd2.bdstatic.com/mda-hktpwedv8tvr05qh/sc/mda-hktpwedv8tvr05qh.mp4?auth_key=1565027248-0-0-e1aff92c4923ceae83123549f329d8bf&bcevod_channel=searchbox_feed&pd=bjh&abtest=all"

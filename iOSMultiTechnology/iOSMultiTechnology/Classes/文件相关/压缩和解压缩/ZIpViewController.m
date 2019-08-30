@@ -19,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([self creatDir:kCachesZipPath]){
+    //初始化
+    if ([[FileManager sharedManager] creatDirectoryAtPath:kCachesZipPath]){
         [self initViews];
     }
 }
@@ -42,6 +43,10 @@
     if (success) {
         self.zipPath = path;
         NSLog(@"使用密码压缩成功:\n %@",path);
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"压缩（路径)" message:path preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"成功" style:UIAlertActionStyleCancel handler:nil];
+        [alertVC addAction:action];
+        [self presentViewController:alertVC animated:YES completion:nil];
     }
 }
 #pragma mark - 压缩某个文件夹（目录）
@@ -79,6 +84,10 @@
     BOOL success =  [SSZipArchive createZipFileAtPath:path withContentsOfDirectory:tempDirectoryPath withPassword:@"123456"];
     if (success) {
         NSLog(@"使用压缩文件夹成功:\n %@",path);
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"压缩（目录)" message:path preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"成功" style:UIAlertActionStyleCancel handler:nil];
+        [alertVC addAction:action];
+        [self presentViewController:alertVC animated:YES completion:nil];
     }
 }
 #pragma mark - 解压
@@ -93,25 +102,29 @@
     BOOL success =  [SSZipArchive unzipFileAtPath:self.zipPath toDestination:destPath overwrite:YES password:@"123456" error:nil];
     if (success) {
         NSLog(@"使用密码解压成功:\n %@",destPath);
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"解压" message:destPath preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"成功" style:UIAlertActionStyleCancel handler:nil];
+        [alertVC addAction:action];
+        [self presentViewController:alertVC animated:YES completion:nil];
     }
 }
 #pragma mark initViews
 - (void)initViews
 {
     UIButton *downloadBtn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn1 setTitle:@"压缩（路径）" forState:UIControlStateNormal];
+    [downloadBtn1 setTitle:@"1.压缩（路径）" forState:UIControlStateNormal];
     [downloadBtn1 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn1 sizeToFit];
     [downloadBtn1 addTarget:self action:@selector(zip1) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *downloadBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn2 setTitle:@"压缩(目录)" forState:UIControlStateNormal];
+    [downloadBtn2 setTitle:@"2.压缩(目录)" forState:UIControlStateNormal];
     [downloadBtn2 sizeToFit];
     [downloadBtn2 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn2 addTarget:self action:@selector(zip2) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *downloadBtn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [downloadBtn3 setTitle:@"解压" forState:UIControlStateNormal];
+    [downloadBtn3 setTitle:@"3.解压" forState:UIControlStateNormal];
     [downloadBtn3 sizeToFit];
     [downloadBtn3 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     [downloadBtn3 addTarget:self action:@selector(unzip) forControlEvents:UIControlEventTouchUpInside];

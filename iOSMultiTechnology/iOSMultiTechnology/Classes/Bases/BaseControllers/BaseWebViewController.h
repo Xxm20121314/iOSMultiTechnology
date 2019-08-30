@@ -10,8 +10,11 @@
 @interface BaseWebViewController : BaseViewController
 
 /**
- 请求url路径
+ 路径名称
  */
 @property (nonatomic,  copy) NSString *urlString;
+
+/** 资源名称*/
+@property (nonatomic,   copy) NSString *sourceName;
 @end
 

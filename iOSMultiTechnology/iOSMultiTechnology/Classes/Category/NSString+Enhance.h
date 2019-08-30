@@ -15,5 +15,7 @@
 + (NSString*)GETCNString:(NSString *)string;
 /**b转成 M*/
 + (NSString*)formatByteCount:(long long)size;
+/*获取mimeType*/
++ (NSString *)mimeTypeForFileAtPath:(NSString *)path;
 @end
 

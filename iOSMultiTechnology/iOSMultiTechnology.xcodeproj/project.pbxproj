@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1F1A702316B882005124A9 /* NSURLSessionDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1F1A6F2316B882005124A9 /* NSURLSessionDelegateController.m */; };
+		5F1F1A782316C134005124A9 /* SessionFileOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1F1A772316C134005124A9 /* SessionFileOperationController.m */; };
+		5F1F1A7B2316C368005124A9 /* SessionDownloadTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1F1A7A2316C368005124A9 /* SessionDownloadTaskController.m */; };
+		5F1F1A7E2316C86F005124A9 /* SessionDownloadTaskDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1F1A7D2316C86F005124A9 /* SessionDownloadTaskDelegateController.m */; };
+		5F1F1A812316CD8D005124A9 /* SessionBreakpointDownloadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1F1A802316CD8D005124A9 /* SessionBreakpointDownloadController.m */; };
+		5F1F1A8C23177D8E005124A9 /* NSURLConfigurationBook.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F1F1A8A23177D1E005124A9 /* NSURLConfigurationBook.txt */; };
+		5F285F8323177EAE00F679AF /* SessionDownloadFileHandleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F285F8223177EAE00F679AF /* SessionDownloadFileHandleController.m */; };
+		5F285F862317B92300F679AF /* SessionBreakpointDownloadWithExitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F285F852317B92300F679AF /* SessionBreakpointDownloadWithExitController.m */; };
+		5F285F8F2318BAE000F679AF /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F285F8E2318BAE000F679AF /* FileManager.m */; };
+		5F285F922318C8E300F679AF /* SessionDownloadOutputStreamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F285F912318C8E300F679AF /* SessionDownloadOutputStreamController.m */; };
+		5F285F952318CBD100F679AF /* SessionUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F285F942318CBD100F679AF /* SessionUploadViewController.m */; };
 		5F38C71E22F419B00072CEB3 /* love_dir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F38C71C22F419B00072CEB3 /* love_dir.jpg */; };
 		5F38C71F22F419B00072CEB3 /* temple-dir.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F38C71D22F419B00072CEB3 /* temple-dir.jpg */; };
 		5F38C72322F427670072CEB3 /* UpLoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F38C72222F427670072CEB3 /* UpLoadController.m */; };
@@ -46,6 +57,10 @@
 		5F4A2BDD22F3E77900A119D2 /* forest-nature.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F4A2BDB22F3E77900A119D2 /* forest-nature.jpg */; };
 		5F6FEC9A230A3D23004D8673 /* MIMETypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6FEC99230A3D23004D8673 /* MIMETypeViewController.m */; };
 		5F6FEC9C230BCE46004D8673 /* fried_rice.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6FEC9B230BCE46004D8673 /* fried_rice.png */; };
+		5FCA2EA223138BA000422807 /* FileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA2EA123138BA000422807 /* FileTableViewController.m */; };
+		5FCA2EA52313CEB300422807 /* NSURLSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA2EA42313CEB300422807 /* NSURLSessionController.m */; };
+		5FCA2EA92313CF9400422807 /* NSURLSessionGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA2EA72313CF9400422807 /* NSURLSessionGetController.m */; };
+		5FCA2EAD2314CA2400422807 /* NSURLSessionPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA2EAC2314CA2400422807 /* NSURLSessionPostController.m */; };
 		5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14EBC22E9411700F5FD7E /* AppDelegate.m */; };
 		5FD14EC522E9411800F5FD7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD14EC422E9411800F5FD7E /* Assets.xcassets */; };
 		5FD14ECB22E9411800F5FD7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD14ECA22E9411800F5FD7E /* main.m */; };
@@ -69,6 +84,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F1F1A6E2316B882005124A9 /* NSURLSessionDelegateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionDelegateController.h; sourceTree = "<group>"; };
+		5F1F1A6F2316B882005124A9 /* NSURLSessionDelegateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionDelegateController.m; sourceTree = "<group>"; };
+		5F1F1A762316C134005124A9 /* SessionFileOperationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionFileOperationController.h; sourceTree = "<group>"; };
+		5F1F1A772316C134005124A9 /* SessionFileOperationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionFileOperationController.m; sourceTree = "<group>"; };
+		5F1F1A792316C368005124A9 /* SessionDownloadTaskController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDownloadTaskController.h; sourceTree = "<group>"; };
+		5F1F1A7A2316C368005124A9 /* SessionDownloadTaskController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDownloadTaskController.m; sourceTree = "<group>"; };
+		5F1F1A7C2316C86F005124A9 /* SessionDownloadTaskDelegateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDownloadTaskDelegateController.h; sourceTree = "<group>"; };
+		5F1F1A7D2316C86F005124A9 /* SessionDownloadTaskDelegateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDownloadTaskDelegateController.m; sourceTree = "<group>"; };
+		5F1F1A7F2316CD8D005124A9 /* SessionBreakpointDownloadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionBreakpointDownloadController.h; sourceTree = "<group>"; };
+		5F1F1A802316CD8D005124A9 /* SessionBreakpointDownloadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionBreakpointDownloadController.m; sourceTree = "<group>"; };
+		5F1F1A8A23177D1E005124A9 /* NSURLConfigurationBook.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSURLConfigurationBook.txt; sourceTree = "<group>"; };
+		5F285F8123177EAE00F679AF /* SessionDownloadFileHandleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDownloadFileHandleController.h; sourceTree = "<group>"; };
+		5F285F8223177EAE00F679AF /* SessionDownloadFileHandleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDownloadFileHandleController.m; sourceTree = "<group>"; };
+		5F285F842317B92300F679AF /* SessionBreakpointDownloadWithExitController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionBreakpointDownloadWithExitController.h; sourceTree = "<group>"; };
+		5F285F852317B92300F679AF /* SessionBreakpointDownloadWithExitController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionBreakpointDownloadWithExitController.m; sourceTree = "<group>"; };
+		5F285F8D2318BAE000F679AF /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		5F285F8E2318BAE000F679AF /* FileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		5F285F902318C8E300F679AF /* SessionDownloadOutputStreamController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDownloadOutputStreamController.h; sourceTree = "<group>"; };
+		5F285F912318C8E300F679AF /* SessionDownloadOutputStreamController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDownloadOutputStreamController.m; sourceTree = "<group>"; };
+		5F285F932318CBD100F679AF /* SessionUploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionUploadViewController.h; sourceTree = "<group>"; };
+		5F285F942318CBD100F679AF /* SessionUploadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionUploadViewController.m; sourceTree = "<group>"; };
 		5F38C71C22F419B00072CEB3 /* love_dir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = love_dir.jpg; sourceTree = "<group>"; };
 		5F38C71D22F419B00072CEB3 /* temple-dir.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "temple-dir.jpg"; sourceTree = "<group>"; };
 		5F38C72122F427670072CEB3 /* UpLoadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpLoadController.h; sourceTree = "<group>"; };
@@ -142,6 +178,14 @@
 		5F6FEC99230A3D23004D8673 /* MIMETypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIMETypeViewController.m; sourceTree = "<group>"; };
 		5F6FEC9B230BCE46004D8673 /* fried_rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fried_rice.png; sourceTree = "<group>"; };
 		5FB6FA4122E9D05F00FFF9FB /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		5FCA2EA023138BA000422807 /* FileTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileTableViewController.h; sourceTree = "<group>"; };
+		5FCA2EA123138BA000422807 /* FileTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileTableViewController.m; sourceTree = "<group>"; };
+		5FCA2EA32313CEB300422807 /* NSURLSessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionController.h; sourceTree = "<group>"; };
+		5FCA2EA42313CEB300422807 /* NSURLSessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionController.m; sourceTree = "<group>"; };
+		5FCA2EA62313CF9400422807 /* NSURLSessionGetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionGetController.h; sourceTree = "<group>"; };
+		5FCA2EA72313CF9400422807 /* NSURLSessionGetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionGetController.m; sourceTree = "<group>"; };
+		5FCA2EAB2314CA2400422807 /* NSURLSessionPostController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionPostController.h; sourceTree = "<group>"; };
+		5FCA2EAC2314CA2400422807 /* NSURLSessionPostController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionPostController.m; sourceTree = "<group>"; };
 		5FD14EB822E9411700F5FD7E /* iOSMultiTechnology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMultiTechnology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD14EBB22E9411700F5FD7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5FD14EBC22E9411700F5FD7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -208,16 +252,57 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5F38C73722F89B650072CEB3 /* New Group */ = {
+		5F1F1A712316C030005124A9 /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
+				5F1F1A762316C134005124A9 /* SessionFileOperationController.h */,
+				5F1F1A772316C134005124A9 /* SessionFileOperationController.m */,
+				5F285F932318CBD100F679AF /* SessionUploadViewController.h */,
+				5F285F942318CBD100F679AF /* SessionUploadViewController.m */,
+				5F1F1A792316C368005124A9 /* SessionDownloadTaskController.h */,
+				5F1F1A7A2316C368005124A9 /* SessionDownloadTaskController.m */,
+				5F1F1A7C2316C86F005124A9 /* SessionDownloadTaskDelegateController.h */,
+				5F1F1A7D2316C86F005124A9 /* SessionDownloadTaskDelegateController.m */,
+				5F1F1A7F2316CD8D005124A9 /* SessionBreakpointDownloadController.h */,
+				5F1F1A802316CD8D005124A9 /* SessionBreakpointDownloadController.m */,
+				5F285F8123177EAE00F679AF /* SessionDownloadFileHandleController.h */,
+				5F285F8223177EAE00F679AF /* SessionDownloadFileHandleController.m */,
+				5F285F902318C8E300F679AF /* SessionDownloadOutputStreamController.h */,
+				5F285F912318C8E300F679AF /* SessionDownloadOutputStreamController.m */,
+				5F285F842317B92300F679AF /* SessionBreakpointDownloadWithExitController.h */,
+				5F285F852317B92300F679AF /* SessionBreakpointDownloadWithExitController.m */,
 			);
-			name = "New Group";
+			path = NSURLSession;
+			sourceTree = "<group>";
+		};
+		5F1F1A722316C05D005124A9 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				5F38C71C22F419B00072CEB3 /* love_dir.jpg */,
+				5F1F1A8A23177D1E005124A9 /* NSURLConfigurationBook.txt */,
+				5F38C71D22F419B00072CEB3 /* temple-dir.jpg */,
+				5F4A2BDA22F3E77900A119D2 /* foggy-nature.jpg */,
+				5F4A2BDB22F3E77900A119D2 /* forest-nature.jpg */,
+				5F38C72422F433050072CEB3 /* avatar.jpg */,
+				5F6FEC9B230BCE46004D8673 /* fried_rice.png */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		5F1F1A8623176BD9005124A9 /* MIMEType */ = {
+			isa = PBXGroup;
+			children = (
+				5F6FEC98230A3D23004D8673 /* MIMETypeViewController.h */,
+				5F6FEC99230A3D23004D8673 /* MIMETypeViewController.m */,
+			);
+			path = MIMEType;
 			sourceTree = "<group>";
 		};
 		5F4A2B3922EE838400A119D2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5F285F8D2318BAE000F679AF /* FileManager.h */,
+				5F285F8E2318BAE000F679AF /* FileManager.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -282,11 +367,9 @@
 			path = JSONAndXML;
 			sourceTree = "<group>";
 		};
-		5F4A2B8422F16F3800A119D2 /* FileOperation */ = {
+		5F4A2B8422F16F3800A119D2 /* NSURLConnection */ = {
 			isa = PBXGroup;
 			children = (
-				5F38C72422F433050072CEB3 /* avatar.jpg */,
-				5F6FEC9B230BCE46004D8673 /* fried_rice.png */,
 				5F38C72122F427670072CEB3 /* UpLoadController.h */,
 				5F38C72222F427670072CEB3 /* UpLoadController.m */,
 				5F4A2B8B22F1729A00A119D2 /* DLSmallFileController.h */,
@@ -302,16 +385,13 @@
 				5F4A2B9E22F1DDD200A119D2 /* DLBigFIieNSFileHandleController.m */,
 				5F4A2BD522F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.h */,
 				5F4A2BD622F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.m */,
-				5F6FEC98230A3D23004D8673 /* MIMETypeViewController.h */,
-				5F6FEC99230A3D23004D8673 /* MIMETypeViewController.m */,
 			);
-			path = FileOperation;
+			path = NSURLConnection;
 			sourceTree = "<group>";
 		};
 		5F4A2BA022F1EB7900A119D2 /* 压缩和解压缩 */ = {
 			isa = PBXGroup;
 			children = (
-				5F4A2BD922F3E5B000A119D2 /* source */,
 				5F4A2BA122F1EBA800A119D2 /* ZIpViewController.h */,
 				5F4A2BA222F1EBA800A119D2 /* ZIpViewController.m */,
 			);
@@ -346,17 +426,6 @@
 			path = GDataXML;
 			sourceTree = "<group>";
 		};
-		5F4A2BD922F3E5B000A119D2 /* source */ = {
-			isa = PBXGroup;
-			children = (
-				5F38C71C22F419B00072CEB3 /* love_dir.jpg */,
-				5F38C71D22F419B00072CEB3 /* temple-dir.jpg */,
-				5F4A2BDA22F3E77900A119D2 /* foggy-nature.jpg */,
-				5F4A2BDB22F3E77900A119D2 /* forest-nature.jpg */,
-			);
-			path = source;
-			sourceTree = "<group>";
-		};
 		5FB6FA4022E9D02200FFF9FB /* Marco */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +434,35 @@
 				5F4A2BD822F3D33F00A119D2 /* CommonMacro.h */,
 			);
 			path = Marco;
+			sourceTree = "<group>";
+		};
+		5FCA2E9D23138AEA00422807 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				5FCA2EA32313CEB300422807 /* NSURLSessionController.h */,
+				5FCA2EA42313CEB300422807 /* NSURLSessionController.m */,
+				5FCA2EA62313CF9400422807 /* NSURLSessionGetController.h */,
+				5FCA2EA72313CF9400422807 /* NSURLSessionGetController.m */,
+				5FCA2EAB2314CA2400422807 /* NSURLSessionPostController.h */,
+				5FCA2EAC2314CA2400422807 /* NSURLSessionPostController.m */,
+				5F1F1A6E2316B882005124A9 /* NSURLSessionDelegateController.h */,
+				5F1F1A6F2316B882005124A9 /* NSURLSessionDelegateController.m */,
+			);
+			path = NSURLSession;
+			sourceTree = "<group>";
+		};
+		5FCA2E9E23138B1600422807 /* 文件相关 */ = {
+			isa = PBXGroup;
+			children = (
+				5FCA2EA023138BA000422807 /* FileTableViewController.h */,
+				5FCA2EA123138BA000422807 /* FileTableViewController.m */,
+				5F1F1A8623176BD9005124A9 /* MIMEType */,
+				5F4A2B8422F16F3800A119D2 /* NSURLConnection */,
+				5F1F1A712316C030005124A9 /* NSURLSession */,
+				5F4A2BA022F1EB7900A119D2 /* 压缩和解压缩 */,
+				5F1F1A722316C05D005124A9 /* source */,
+			);
+			path = "文件相关";
 			sourceTree = "<group>";
 		};
 		5FD14EAF22E9411700F5FD7E = {
@@ -442,12 +540,12 @@
 			isa = PBXGroup;
 			children = (
 				5F4A2BAD22F2806A00A119D2 /* Vender */,
-				5F4A2BA022F1EB7900A119D2 /* 压缩和解压缩 */,
 				5F4A2B3922EE838400A119D2 /* Helpers */,
 				5F4A2BAB22F2803B00A119D2 /* Bases */,
 				5FD14F1722E99AE600F5FD7E /* Category */,
 				5FD14EDC22E94C0700F5FD7E /* Home */,
 				5FD14EFD22E951F300F5FD7E /* 网络相关 */,
+				5FCA2E9E23138B1600422807 /* 文件相关 */,
 				5FD14EE622E94CA500F5FD7E /* Other */,
 			);
 			path = Classes;
@@ -456,7 +554,6 @@
 		5FD14EF522E94FDD00F5FD7E /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
-				5F38C73722F89B650072CEB3 /* New Group */,
 				5FD14EEF22E94F6500F5FD7E /* BaseTableViewCell.h */,
 				5FD14EF022E94F6500F5FD7E /* BaseTableViewCell.m */,
 				5FD14EFA22E9517400F5FD7E /* XXMBridgeCell.h */,
@@ -479,7 +576,7 @@
 			children = (
 				5FD14F0222E9530800F5FD7E /* NetWorkTableController.h */,
 				5FD14F0322E9530800F5FD7E /* NetWorkTableController.m */,
-				5F4A2B8422F16F3800A119D2 /* FileOperation */,
+				5FCA2E9D23138AEA00422807 /* NSURLSession */,
 				5F4A2B5322F03BC800A119D2 /* JSONAndXML */,
 				5F4A2B5222F03B9900A119D2 /* NSURLConnection */,
 				5F4A2B5022F034AA00A119D2 /* DataModels */,
@@ -578,6 +675,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1F1A8C23177D8E005124A9 /* NSURLConfigurationBook.txt in Resources */,
 				5F38C71F22F419B00072CEB3 /* temple-dir.jpg in Resources */,
 				5F4A2B8022F13E9C00A119D2 /* Frequently.xcassets in Resources */,
 				5F4A2BDC22F3E77900A119D2 /* foggy-nature.jpg in Resources */,
@@ -629,19 +727,27 @@
 				5F4A2BA322F1EBA800A119D2 /* ZIpViewController.m in Sources */,
 				5FD14F1B22E99B3100F5FD7E /* NSString+Enhance.m in Sources */,
 				5F4A2B4A22EEE67B00A119D2 /* MainBridgeController.m in Sources */,
+				5FCA2EA52313CEB300422807 /* NSURLSessionController.m in Sources */,
 				5F4A2B7522F09B8200A119D2 /* YYNewsDataModel.m in Sources */,
 				5F4A2BD722F3CA8E00A119D2 /* DLBigFIieNSOutputStreamController.m in Sources */,
+				5F1F1A812316CD8D005124A9 /* SessionBreakpointDownloadController.m in Sources */,
 				5FD14EF122E94F6500F5FD7E /* BaseTableViewCell.m in Sources */,
 				5F38C73522F8093C0072CEB3 /* DLMultithreadController.m in Sources */,
 				5F38C72322F427670072CEB3 /* UpLoadController.m in Sources */,
 				5F4A2B4722EEE31D00A119D2 /* JSONAndXMLParserController.m in Sources */,
+				5FCA2EA92313CF9400422807 /* NSURLSessionGetController.m in Sources */,
 				5FD14F1622E9962700F5FD7E /* NSURLConnectionManager.m in Sources */,
+				5F285F862317B92300F679AF /* SessionBreakpointDownloadWithExitController.m in Sources */,
 				5F4A2B7B22F09EFF00A119D2 /* YYCookingDataModel.m in Sources */,
 				5FD14ECB22E9411800F5FD7E /* main.m in Sources */,
 				5FD14EDF22E94C4A00F5FD7E /* BaseViewController.m in Sources */,
 				5F4A2B7E22F09F0B00A119D2 /* MJCookingDataModel.m in Sources */,
 				5FD14F0B22E956A600F5FD7E /* NetWorkManager.m in Sources */,
+				5F285F8F2318BAE000F679AF /* FileManager.m in Sources */,
+				5F1F1A702316B882005124A9 /* NSURLSessionDelegateController.m in Sources */,
+				5FCA2EAD2314CA2400422807 /* NSURLSessionPostController.m in Sources */,
 				5FD14EBD22E9411700F5FD7E /* AppDelegate.m in Sources */,
+				5F1F1A7E2316C86F005124A9 /* SessionDownloadTaskDelegateController.m in Sources */,
 				5F4A2B4122EEA70E00A119D2 /* Foundation+Log.m in Sources */,
 				5F4A2BB922F287D800A119D2 /* NSURLConnPOSTAsyncController.m in Sources */,
 				5FD14EE522E94C9F00F5FD7E /* HomeTableViewController.m in Sources */,
@@ -657,18 +763,24 @@
 				5F4A2B6A22F045AD00A119D2 /* UIView+Layout.m in Sources */,
 				5F4A2BC222F28C2E00A119D2 /* GDataXMLNode.m in Sources */,
 				5F4A2BD422F342F700A119D2 /* DLBigFIieResumeController.m in Sources */,
+				5F285F922318C8E300F679AF /* SessionDownloadOutputStreamController.m in Sources */,
 				5F4A2BBC22F287E900A119D2 /* NSURLConnPOSTDelegateController.m in Sources */,
 				5F4A2B5F22F042D700A119D2 /* OCToModelViewController.m in Sources */,
 				5FD14F0422E9530800F5FD7E /* NetWorkTableController.m in Sources */,
+				5FCA2EA223138BA000422807 /* FileTableViewController.m in Sources */,
 				5FD14F2122E9A30800F5FD7E /* NSURLConnectionController.m in Sources */,
+				5F285F8323177EAE00F679AF /* SessionDownloadFileHandleController.m in Sources */,
 				5F4A2B7822F09BA000A119D2 /* MJNewsDataModel.m in Sources */,
+				5F1F1A7B2316C368005124A9 /* SessionDownloadTaskController.m in Sources */,
 				5FD14EE922E94CB300F5FD7E /* OtherTableViewController.m in Sources */,
 				5F4A2B6522F0433C00A119D2 /* OCToJSONViewController.m in Sources */,
 				5FD14F1022E957DE00F5FD7E /* BaseWebViewController.m in Sources */,
 				5FD14ED622E9498800F5FD7E /* MainTabBarController.m in Sources */,
 				5F4A2B8722F16F6200A119D2 /* FileOperationController.m in Sources */,
 				5F4A2BD122F3227200A119D2 /* NSURLConnGCDRunLoopController.m in Sources */,
+				5F1F1A782316C134005124A9 /* SessionFileOperationController.m in Sources */,
 				5F4A2BB322F2842800A119D2 /* NSURLConnGetDelegateController.m in Sources */,
+				5F285F952318CBD100F679AF /* SessionUploadViewController.m in Sources */,
 				5F4A2B8D22F1729A00A119D2 /* DLSmallFileController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

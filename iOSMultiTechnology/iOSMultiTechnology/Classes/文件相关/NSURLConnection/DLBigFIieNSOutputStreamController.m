@@ -8,7 +8,7 @@
 
 #import "DLBigFIieNSOutputStreamController.h"
 #import <MediaPlayer/MediaPlayer.h>
-#define KBigStreamFileName @"海贼王_04.mp4"
+#define KBigStreamFileName @"NSURLConnection_海贼王_04.mp4"
 @interface DLBigFIieNSOutputStreamController ()<NSURLConnectionDataDelegate,NSStreamDelegate>
 /** 文件总大小 */
 @property (nonatomic, assign) NSInteger totalSize;
@@ -19,7 +19,7 @@
 /** 输出流 写*/
 @property (nonatomic, strong) NSOutputStream *writeStream;
 
-/** 输出流 读*/
+/** 输入流 读*/
 @property (nonatomic, strong) NSInputStream *readStream;
 
 /** 进度条 */

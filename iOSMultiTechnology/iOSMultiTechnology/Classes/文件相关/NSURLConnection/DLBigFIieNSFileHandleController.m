@@ -8,7 +8,7 @@
 
 #import "DLBigFIieNSFileHandleController.h"
 #import <MediaPlayer/MediaPlayer.h>
-#define KBigFileName @"海贼王_02.mp4"
+#define KBigFileName @"NSURLConnection_海贼王_02.mp4"
 @interface DLBigFIieNSFileHandleController ()<NSURLConnectionDataDelegate>
 
 /** 文件总大小 */
@@ -32,7 +32,6 @@
     [super viewDidLoad];
      /**文件句柄 处理数据
       使用文件句柄不会导致内存暴增
-      
       */
     [self initViews];
 }

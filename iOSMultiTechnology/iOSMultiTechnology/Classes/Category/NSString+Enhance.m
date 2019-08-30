@@ -7,7 +7,7 @@
 //
 
 #import "NSString+Enhance.h"
-
+#import <MobileCoreServices/MobileCoreServices.h>
 @implementation NSString (Enhance)
 + (NSString *)paramsStringWithParams:(NSDictionary *)params
 {
@@ -33,5 +33,22 @@
 + (NSString*)formatByteCount:(long long)size
 {
     return [NSByteCountFormatter stringFromByteCount:size countStyle:NSByteCountFormatterCountStyleFile];
+}
+/**
+ 注意：需要依赖于框架MobileCoreServices
+ */
++ (NSString *)mimeTypeForFileAtPath:(NSString *)path
+{
+    if (![[[NSFileManager alloc] init] fileExistsAtPath:path]) {
+        return nil;
+    }
+    CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,  (__bridge CFStringRef _Nonnull)[path pathExtension], NULL);
+    CFStringRef MIMEType = UTTypeCopyPreferredTagWithClass (UTI, kUTTagClassMIMEType);
+    CFRelease(UTI);
+    if (!MIMEType) {
+        //application/octet-stream 任意的二进制数据类型
+        return @"application/octet-stream";
+    }
+    return (__bridge NSString *)(MIMEType);
 }
 @end

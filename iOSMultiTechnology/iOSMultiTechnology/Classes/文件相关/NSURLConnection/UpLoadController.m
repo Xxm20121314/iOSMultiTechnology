@@ -9,23 +9,20 @@
 #import "UpLoadController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface UpLoadController ()
+@interface UpLoadController ()<NSURLConnectionDataDelegate>
+/** reveiveData*/
+@property (nonatomic, strong) NSMutableData *reveiveData;
 
-/** 分隔符*/
-@property (nonatomic,   copy) NSString *delimiter;
+/** 进度条*/
+@property (nonatomic, strong) UIProgressView *progressView;
 @end
 
 @implementation UpLoadController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSLog(@"XXMCreateMultipartFormBoundary:%@",XXMCreateMultipartFormBoundary());
+    [self initViews];
     // Do any additional setup after loading the view.
-}
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self upLoad];
 }
 - (void)upLoad
 {
@@ -82,17 +79,39 @@
     [fileData appendData:[[NSString stringWithFormat:@"--%@--",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 
     request.HTTPBody = fileData;
-    
     // 发送请求
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * __nullable response, NSData * __nullable data, NSError * __nullable connectionError) {
-        //7.解析服务器返回的数据
-        NSString *obj = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-
-        NSLog(@"obj:%@",obj);
-        NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
-    }];
+    NSURLConnection * connect = [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:NO];
+    [connect setDelegateQueue:[NSOperationQueue mainQueue]];
+    [connect start];
+    self.reveiveData = [NSMutableData new];
 }
-//分隔符 + 随机数 (仿照web请求例子 ----WebKitFormBoundaryELACoLe9jG4DpV21)
+#pragma mark - NSURLConnectionDelegate
+- (void)connection:(NSURLConnection *)connection  didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
+{
+    NSLog(@"%f",1.0 *totalBytesWritten / totalBytesExpectedToWrite);
+    self.progressView.progress = 1.0 * totalBytesWritten / totalBytesExpectedToWrite;
+
+}
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"didReceiveResponse");
+}
+- (void)connection:(NSURLConnection *)connection didReceiveData:(nonnull NSData *)data
+{
+    //接受服务端返回的数据
+    [self.reveiveData appendData:data];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"上传成功");
+    id obj = [NSJSONSerialization JSONObjectWithData:self.reveiveData options:kNilOptions error:nil];
+    NSLog(@"%@",obj);
+}
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%s",__func__);
+}
+//分隔符（不强制要求这样格式、(这里的demo仿照web请求例子 ----WebKitFormBoundaryELACoLe9jG4DpV21)，
 static NSString * XXMCreateMultipartFormBoundary() {
     return [NSString stringWithFormat:@"----WebKitFormBoundary%08X%08X", arc4random(), arc4random()];
 }
@@ -112,6 +131,39 @@ static NSData * XXMMultipartFormNonfFileDisposition(NSString * name) {
 static NSData * XXMMultipartFormContentType(NSString * mimeType ) {
     return  [[NSString stringWithFormat:@"Content-Type: %@",mimeType]  dataUsingEncoding:NSUTF8StringEncoding];
 }
+#pragma mark initViews
+- (void)initViews
+{
+    UIButton *downloadBtn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [downloadBtn1 setTitle:@"上传" forState:UIControlStateNormal];
+    [downloadBtn1 setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+    [downloadBtn1 sizeToFit];
+    [downloadBtn1 addTarget:self action:@selector(upLoad) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    downloadBtn1.top = 10;
+    downloadBtn1.centerX = self.view.centerX;
+    
+    [self.view addSubview:downloadBtn1];
+
+    UIProgressView *progressV = [[UIProgressView alloc] init];
+    progressV.top = 70;
+    progressV.width = 200;
+    progressV.centerX = self.view.centerX;
+    self.progressView = progressV;
+    [self.view addSubview:self.progressView];
+    
+    UIImageView *imageV = [[UIImageView alloc] init];
+    UIImage *image = [UIImage imageNamed:@"avatar.jpg"];;
+    imageV.image = image;
+    imageV.left = 50;
+    imageV.top = 100;
+    imageV.size = image.size;
+//    imageV.centerX = self.
+    [self.view addSubview:imageV];
+    
+}
+#pragma mark - 步骤解析
 - (void)steps
 {
     /** 文件上传步骤
