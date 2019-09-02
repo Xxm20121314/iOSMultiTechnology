@@ -1,16 +1,16 @@
 //
-//  DLSmallFileController.m
+//  ConnectionDownloadlFileController.m
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/7/31.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "DLSmallFileController.h"
+#import "ConnectionDownloadlFileController.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 #define KSmallFileName @"NSURLConnection_海贼王_01.mp4"
-@interface DLSmallFileController ()<NSURLConnectionDataDelegate>
+@interface ConnectionDownloadlFileController ()<NSURLConnectionDataDelegate>
 /** 文件data */
 @property (nonatomic, strong) NSMutableData *fileData;
 
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation DLSmallFileController
+@implementation ConnectionDownloadlFileController
 
 - (void)dealloc
 {
@@ -197,11 +197,10 @@
     [self.view addSubview:self.progressView];
     
     UIImageView *imageV = [[UIImageView alloc] init];
-    imageV.left = 50;
     imageV.top = 260;
-    imageV.width = ScreenWidth - 100;
-    imageV.height = 300;
-    
+    imageV.width = 200;
+    imageV.height = 200;
+    imageV.centerX = self.view.centerX;
     self.imageView = imageV;
     [self.view addSubview:self.imageView];
     

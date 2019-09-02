@@ -1,15 +1,15 @@
 //
-//  UpLoadController.m
+//  ConnectionUpLoadController.m
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/8/2.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "UpLoadController.h"
+#import "ConnectionUpLoadController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface UpLoadController ()<NSURLConnectionDataDelegate>
+@interface ConnectionUpLoadController ()<NSURLConnectionDataDelegate>
 /** reveiveData*/
 @property (nonatomic, strong) NSMutableData *reveiveData;
 
@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UIProgressView *progressView;
 @end
 
-@implementation UpLoadController
+@implementation ConnectionUpLoadController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -156,10 +156,10 @@ static NSData * XXMMultipartFormContentType(NSString * mimeType ) {
     UIImageView *imageV = [[UIImageView alloc] init];
     UIImage *image = [UIImage imageNamed:@"avatar.jpg"];;
     imageV.image = image;
-    imageV.left = 50;
     imageV.top = 100;
-    imageV.size = image.size;
-//    imageV.centerX = self.
+    imageV.width = 200;
+    imageV.height = 200;
+    imageV.centerX = self.view.centerX;
     [self.view addSubview:imageV];
     
 }

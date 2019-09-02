@@ -1,15 +1,15 @@
 //
-//  DLBigFIieNSFileHandleController.m
+//  ConnectionDownloadFileHandleController.m
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/7/31.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "DLBigFIieNSFileHandleController.h"
+#import "ConnectionDownloadFileHandleController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #define KBigFileName @"NSURLConnection_海贼王_02.mp4"
-@interface DLBigFIieNSFileHandleController ()<NSURLConnectionDataDelegate>
+@interface ConnectionDownloadFileHandleController ()<NSURLConnectionDataDelegate>
 
 /** 文件总大小 */
 @property (nonatomic, assign) NSInteger totalSize;
@@ -27,7 +27,7 @@
 @property (nonatomic, strong) NSString *fullPath;
 @end
 
-@implementation DLBigFIieNSFileHandleController
+@implementation ConnectionDownloadFileHandleController
 - (void)viewDidLoad {
     [super viewDidLoad];
      /**文件句柄 处理数据

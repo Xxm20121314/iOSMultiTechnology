@@ -1,23 +1,20 @@
 //
-//  DLBigFIieResumeController.m
+//  ConnectionDownloadResumeController.m
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/8/1.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "DLBigFIieResumeController.h"
+#import "ConnectionDownloadResumeController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #define KBigResumeFileName @"NSURLConnection_海贼王_03.mp4"
-@interface DLBigFIieResumeController ()<NSURLConnectionDataDelegate>
+@interface ConnectionDownloadResumeController ()<NSURLConnectionDataDelegate>
 /** 文件总大小 */
 @property (nonatomic, assign) NSInteger totalSize;
 
 /** 当前大小 */
 @property (nonatomic, assign) NSInteger currentSize;
-
-/** pic */
-@property (nonatomic, strong) UIImageView *imageView;
 
 /** 文件句柄 */
 @property (nonatomic,   copy) NSFileHandle *fileHandle;
@@ -32,7 +29,7 @@
 @property (nonatomic, strong) NSURLConnection *connection;
 @end
 
-@implementation DLBigFIieResumeController
+@implementation ConnectionDownloadResumeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

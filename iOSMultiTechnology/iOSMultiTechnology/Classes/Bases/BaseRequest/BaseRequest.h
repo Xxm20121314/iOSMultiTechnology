@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+typedef void (^Progress) (float progress);
+typedef void (^BaseRequestComplete)(id responseObject,NSError *error);
 
 @interface BaseRequest : NSObject
+/** GET请求 */
++(NSURLSessionDataTask*)GET:(NSString *)URLString parameters:(NSDictionary *)parameters complete:(BaseRequestComplete)complete;
+/** POST请求 */
++(NSURLSessionDataTask*)POST:(NSString *)URLString parameters:(NSDictionary *)parameters complete:(BaseRequestComplete)complete; 
+/** 下载请求 */
++(NSURLSessionDownloadTask*)Download:(NSString *)URLString parameters:(NSDictionary *)parameters savePath:(NSString*)savePath progress:(Progress)progress complete:(BaseRequestComplete)complete;
+/** 上传文件 文件路径*/
++ (NSURLSessionDataTask*)UploadFile:(NSString*)URLString parameters:(NSDictionary *)parameters destPath:(NSString*)destPath progress:(Progress)progress complete:(BaseRequestComplete)complete;
+/** 上传图片请求 文件二进制*/
++ (NSURLSessionDataTask*)UploadImage:(NSString*)URLString parameters:(NSDictionary *)parameters imageData:(NSData*)imageData progress:(Progress)progress complete:(BaseRequestComplete)complete;
 @end
 

@@ -1,5 +1,5 @@
 //
-//  DLSmallFileController.h
+//  ConnectionDownloadFileHandleController.h
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/7/31.
@@ -8,7 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface DLSmallFileController : BaseViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface ConnectionDownloadFileHandleController : BaseViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/&#x6587;&#x4ef6;&#x76f8;&#x5173;/NSURLSession/SessionBreakpointDownloadController.m"
-            timestampString = "588838988.487044"
+            timestampString = "589106010.047056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/Bases/BaseControllers/BaseWebViewController.m"
-            timestampString = "588838988.4871269"
+            timestampString = "589106010.047693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -138,28 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSMultiTechnology/Classes/Bases/BaseControllers/BaseWebViewController.m"
-            timestampString = "588838988.487187"
+            timestampString = "589106010.04869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "-goForwardClick"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOSMultiTechnology/Classes/&#x6587;&#x4ef6;&#x76f8;&#x5173;/NSURLSession/SessionUploadViewController.m"
-            timestampString = "588838988.487245"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-upLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,25 +9,8 @@
 #import "NSString+Enhance.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 @implementation NSString (Enhance)
-+ (NSString *)paramsStringWithParams:(NSDictionary *)params
-{
-    NSMutableString *paramsString = [NSMutableString string];
-    if (params.allKeys.count > 0){
-        for (NSString *key in params.allKeys){
-            NSString *value = [params objectForKey:key];
-            [paramsString appendFormat:@"&%@=%@", key, value];
-        }
-        [paramsString deleteCharactersInRange:NSMakeRange(0, 1)];
-    }
-    return paramsString;
-}
 + (NSString*)toString:(NSObject *)object {
     return [NSString stringWithFormat:@"%@", object == nil || object == [NSNull null] ? @"" : object];
-}
-#pragma mark - 中文转码处理
-+ (NSString*)GETCNString:(NSString *)string
-{
-    return [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 #pragma mark - b 转成 M 
 + (NSString*)formatByteCount:(long long)size
@@ -50,5 +33,18 @@
         return @"application/octet-stream";
     }
     return (__bridge NSString *)(MIMEType);
+}
+/*参数拼接*/
++ (NSString *)paramsStringWithParams:(NSDictionary *)params
+{
+    NSMutableString *paramsString = [NSMutableString string];
+    if (params.allKeys.count > 0){
+        for (NSString *key in params.allKeys){
+            NSString *value = [params objectForKey:key];
+            [paramsString appendFormat:@"&%@=%@", key, value];
+        }
+        [paramsString deleteCharactersInRange:NSMakeRange(0, 1)];
+    }
+    return paramsString;
 }
 @end

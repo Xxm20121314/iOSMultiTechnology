@@ -1,5 +1,5 @@
 //
-//  DLBigFIieNSOutputStreamController.h
+//  ConnectionDownloadOutputStreamController.h
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/8/2.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DLBigFIieNSOutputStreamController : BaseViewController
+@interface ConnectionDownloadOutputStreamController : BaseViewController
 
 @end
 

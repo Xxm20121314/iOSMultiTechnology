@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Enhance)
-+ (NSString *)paramsStringWithParams:(NSDictionary *)paramsp;
 + (NSString *)toString:(NSObject *)object;
 #pragma mark 
-+ (NSString*)GETCNString:(NSString *)string;
 /**b转成 M*/
 + (NSString*)formatByteCount:(long long)size;
 /*获取mimeType*/
 + (NSString *)mimeTypeForFileAtPath:(NSString *)path;
+/*参数拼接*/
++ (NSString *)paramsStringWithParams:(NSDictionary *)paramsp;
 @end
 

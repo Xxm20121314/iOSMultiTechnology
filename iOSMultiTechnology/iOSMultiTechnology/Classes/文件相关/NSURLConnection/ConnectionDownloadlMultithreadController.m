@@ -1,12 +1,12 @@
 //
-//  DLMultithreadController.m
+//  ConnectionDownloadlMultithreadController.h
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/8/5.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "DLMultithreadController.h"
+#import "ConnectionDownloadlMultithreadController.h"
 
 #import "pthread.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -18,7 +18,7 @@
 //比较小的资源
 //#define KDownloadURL @"https://vd2.bdstatic.com/mda-ikvg1pby3dt9srn5/sc/mda-ikvg1pby3dt9srn5.mp4?auth_key=1565027798-0-0-a80412693d14345dd203fcd2b029fa67&bcevod_channel=searchbox_feed&pd=bjh&abtest=alll"
 
-@interface DLMultithreadController ()<NSURLConnectionDataDelegate>
+@interface ConnectionDownloadlMultithreadController ()<NSURLConnectionDataDelegate>
 
 /** （模拟用、一般有服务器提供）获取资源大小用*/
 @property (nonatomic, strong) NSURLConnection *resoureCeconnection;
@@ -75,7 +75,7 @@
 
 @end
 
-@implementation DLMultithreadController
+@implementation ConnectionDownloadlMultithreadController
 
 - (instancetype)init
 {

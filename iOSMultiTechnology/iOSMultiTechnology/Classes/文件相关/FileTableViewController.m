@@ -10,8 +10,9 @@
 
 #import "ZIpViewController.h"
 #import "MIMETypeViewController.h"
-#import "FileOperationController.h"
+#import "AFNFileOperationController.h"
 #import "SessionFileOperationController.h"
+#import "ConnectionFileOperationController.h"
 @interface FileTableViewController ()
 @property (nonatomic, strong) UISwitch *s;
 @end
@@ -27,26 +28,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    XXMBridgeModel *item0 = [[XXMBridgeModel alloc] init];
-    item0.title = @"文件下载与上传";
-    item0.subTitle = @"NSURLConnection";
-    item0.bridgeClass = [FileOperationController class];
+    XXMBridgeModel *item0= [[XXMBridgeModel alloc] init];
+    item0.title = @"文件压缩与解压缩";
+    item0.subTitle = @"第三方（SSZipArchive）";
+    item0.bridgeClass = [ZIpViewController class];
     
     XXMBridgeModel *item1 = [[XXMBridgeModel alloc] init];
-    item1.title = @"文件下载与上传";
-    item1.subTitle = @"NSURLSession";
-    item1.bridgeClass = [SessionFileOperationController class];
+    item1.title = @"文件MIMEType类型";
+    item1.bridgeClass = [MIMETypeViewController class];
     
-    XXMBridgeModel *item2= [[XXMBridgeModel alloc] init];
-    item2.title = @"文件压缩与解压缩";
-    item2.subTitle = @"第三方（SSZipArchive）";
-    item2.bridgeClass = [ZIpViewController class];
+    XXMBridgeModel *item2 = [[XXMBridgeModel alloc] init];
+    item2.title = @"文件下载与上传";
+    item2.subTitle = @"NSURLConnection";
+    item2.bridgeClass = [ConnectionFileOperationController class];
     
     XXMBridgeModel *item3 = [[XXMBridgeModel alloc] init];
-    item3.title = @"文件MIMEType类型";
-    item3.bridgeClass = [MIMETypeViewController class];
+    item3.title = @"文件下载与上传";
+    item3.subTitle = @"NSURLSession";
+    item3.bridgeClass = [SessionFileOperationController class];
     
-    [self.lists addObjectsFromArray:@[item0,item1,item2,item3]];
+    XXMBridgeModel *item4 = [[XXMBridgeModel alloc] init];
+    item4.title = @"文件下载与上传";
+    item4.subTitle = @"AFNetworking";
+    item4.bridgeClass = [AFNFileOperationController class];
+    
+    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4]];
     //创建文件夹
     if ([[FileManager sharedManager] creatDirectoryAtPath:kCachesDownloadPath]){
         [self.tableView reloadData];

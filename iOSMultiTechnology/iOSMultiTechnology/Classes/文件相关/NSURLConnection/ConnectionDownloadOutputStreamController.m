@@ -1,15 +1,15 @@
 //
-//  DLBigFIieNSOutputStreamController.m
+//  ConnectionDownloadOutputStreamController.m
 //  iOSMultiTechnology
 //
 //  Created by 许小明 on 2019/8/2.
 //  Copyright © 2019 许小明(xxm20121314@hotmail.com). All rights reserved.
 //
 
-#import "DLBigFIieNSOutputStreamController.h"
+#import "ConnectionDownloadOutputStreamController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #define KBigStreamFileName @"NSURLConnection_海贼王_04.mp4"
-@interface DLBigFIieNSOutputStreamController ()<NSURLConnectionDataDelegate,NSStreamDelegate>
+@interface ConnectionDownloadOutputStreamController ()<NSURLConnectionDataDelegate,NSStreamDelegate>
 /** 文件总大小 */
 @property (nonatomic, assign) NSInteger totalSize;
 
@@ -32,7 +32,7 @@
 @property (nonatomic, strong) NSURLConnection *connection;
 @end
 
-@implementation DLBigFIieNSOutputStreamController
+@implementation ConnectionDownloadOutputStreamController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

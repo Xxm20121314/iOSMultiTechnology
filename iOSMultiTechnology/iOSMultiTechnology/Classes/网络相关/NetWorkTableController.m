@@ -8,8 +8,8 @@
 
 #import "NetWorkTableController.h"
 
+#import "AFNViewController.h"
 #import "NSURLSessionController.h"
-#import "FileOperationController.h"
 #import "NSURLConnectionController.h"
 #import "JSONAndXMLParserController.h"
 @implementation NetWorkTableController
@@ -27,28 +27,32 @@
         web.urlString = @"https://www.jianshu.com/p/4f2a08a7aa9e";
         [weakSelf.navigationController pushViewController:web animated:YES];
     };
-    XXMBridgeModel *item1= [[XXMBridgeModel alloc] init];
-    item1.title = @"iOS解决字典和数组中输出乱码的问题";
-    item1.subTitle = @"查看Foundation+Log类文件";
-    item1.block = ^{
+    
+    XXMBridgeModel *item1 = [[XXMBridgeModel alloc] init];
+    item1.title = @"NSURLConnection相关";
+    item1.bridgeClass = [NSURLConnectionController class];
+    
+    XXMBridgeModel *item2 = [[XXMBridgeModel alloc] init];
+    item2.title = @"NSURLSession相关";
+    item2.bridgeClass = [NSURLSessionController class];
+    
+    XXMBridgeModel *item3 = [[XXMBridgeModel alloc] init];
+    item3.title = @"AFNetworking相关";
+    item3.bridgeClass = [AFNViewController class];
+    
+    XXMBridgeModel *item4 = [[XXMBridgeModel alloc] init];
+    item4.title = @"JSON&XML解析";
+    item4.bridgeClass = [JSONAndXMLParserController class];
+    
+    XXMBridgeModel *item5= [[XXMBridgeModel alloc] init];
+    item5.title = @"HTTP状态码";
+    item5.block = ^{
         BaseWebViewController *web = [[BaseWebViewController alloc] init];
-        web.urlString = @"https://www.jianshu.com/p/0f1602e4f0da";
+        web.sourceName = @"HTTP状态码.txt";
         [weakSelf.navigationController pushViewController:web animated:YES];
     };
     
-    XXMBridgeModel *item2= [[XXMBridgeModel alloc] init];
-    item2.title = @"NSURLConnection相关";
-    item2.bridgeClass = [NSURLConnectionController class];
-    
-    XXMBridgeModel *item3= [[XXMBridgeModel alloc] init];
-    item3.title = @"JSON&XML解析";
-    item3.bridgeClass = [JSONAndXMLParserController class];
-    
-    XXMBridgeModel *item4= [[XXMBridgeModel alloc] init];
-    item4.title = @"NSURLSession相关";
-    item4.bridgeClass = [NSURLSessionController class];
-    
-    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4]];
+    [self.lists addObjectsFromArray:@[item0,item1,item2,item3,item4,item5]];
     [self.tableView reloadData];
 }
 - (void)dealloc
